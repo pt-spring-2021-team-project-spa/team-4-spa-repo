@@ -15,6 +15,8 @@ public class JPAWiringTest {
     private ContinentRepository continentRepo;
     @Autowired
     private RegionRepository regionRepo;
+    @Autowired
+    private TrekRepository TrekRepo;
 
     @Test
     public void ContinentShouldHaveAListTreks() {
