@@ -4,4 +4,8 @@ public class Trek {
 
     public Trek(String title, String difficulty, String description, Region testRegion, Continent testContinent, String review) {
     }
+
+    public Long getId() {
+        return null;
+    }
 }
