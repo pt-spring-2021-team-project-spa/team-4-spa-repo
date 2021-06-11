@@ -11,10 +11,15 @@ public class JPAWiringTest {
     @Autowired
     private TestEntityManager entityManager;
 
+    @Autowired
+    private ContinentRepository continentRepo;
+
     @Test
     public void ContinentShouldHaveAListTreks() {
         Continent testContinent = new Continent("Test Location");
-        Region testRegion = new Region("Test climate");
-        Trek testTrek = new Trek("Title", "Difficulty", "Description", testRegion, testContinent, "Review");
+        Region testRegion1 = new Region("Test climate");
+        Trek testTrek = new Trek("Title", "Difficulty", "Description", testRegion1, testContinent, "Review");
+
+        regionRepo.save(testRegion1);
     }
 }
