@@ -14,7 +14,7 @@ public class Continent {
     private String location;
 
     public Long getId() {
-        return null;
+        return id;
     }
 
     public Continent() {}

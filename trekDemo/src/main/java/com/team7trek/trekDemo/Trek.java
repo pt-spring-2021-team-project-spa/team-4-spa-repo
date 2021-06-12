@@ -1,8 +1,8 @@
 package com.team7trek.trekDemo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -14,15 +14,26 @@ public class Trek {
     private String title;
     private String difficulty;
     private String description;
-    private Continent continent;
     private String review;
+    @ManyToOne
+    private Continent continent;
+    @ManyToMany
     private Collection<Region> regions;
 
-
-    public Trek(String title, String difficulty, String description, Continent continent, String review, Region... regions) {
-    }
-
     public Long getId() {
-        return null;
+    return id;
+}
+    public Trek() {
+        
     }
+
+    public Trek(String title, String difficulty, String description, Continent continent, String review, Region...regions) {
+        this.title = title;
+        this.description = description;
+        this.difficulty = difficulty;
+        this.continent = continent;
+        this.review = review;
+        this.regions = new ArrayList<>(Arrays.asList(regions));
+    }
+
 }
