@@ -24,7 +24,7 @@ public class Trek {
     return id;
 }
     public Trek() {
-        
+
     }
 
     public Trek(String title, String difficulty, String description, Continent continent, String review, Region...regions) {
