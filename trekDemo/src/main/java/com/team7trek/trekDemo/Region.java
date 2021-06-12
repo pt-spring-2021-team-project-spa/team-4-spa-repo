@@ -13,6 +13,9 @@ public class Region {
     private Long id;
     private String climate;
 
+    public Region () {
+
+    }
 
     public Region(String climate) {
         this.climate = climate;

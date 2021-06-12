@@ -26,7 +26,6 @@ public class Trek {
     public Trek() {
 
     }
-
     public Trek(String title, String difficulty, String description, Continent continent, String review, Region...regions) {
         this.title = title;
         this.description = description;
