@@ -3,6 +3,7 @@ package com.team7trek.trekDemo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.Collection;
 
 @Entity
@@ -12,6 +13,8 @@ public class Continent {
     @GeneratedValue
     private Long id;
     private String location;
+    @OneToMany(mappedBy = "continent")
+    private Collection<Trek> treks;
 
     public Long getId() {
         return id;
@@ -26,6 +29,6 @@ public class Continent {
 
 
     public Collection<Trek> getTreks() {
-        return null;
+        return treks;
     }
 }
