@@ -10,14 +10,20 @@ public class Continent {
 
     @Id
     @GeneratedValue
-
-
-    public Continent(String test_location) {
-    }
+    private Long id;
+    private String location;
 
     public Long getId() {
         return null;
     }
+
+    public Continent() {}
+
+
+    public Continent(String location) {
+        this.location = location;
+    }
+
 
     public Collection<Trek> getTreks() {
         return null;
