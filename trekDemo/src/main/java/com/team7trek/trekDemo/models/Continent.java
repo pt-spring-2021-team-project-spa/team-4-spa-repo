@@ -1,4 +1,4 @@
-package com.team7trek.trekDemo;
+package com.team7trek.trekDemo.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +14,8 @@ public class Continent {
     @GeneratedValue
     private Long id;
     private String location;
+    private String title;
+    private String image;
     @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
 
@@ -24,10 +26,23 @@ public class Continent {
     public Continent() {}
 
 
-    public Continent(String location) {
+    public Continent(String location,String image,String title) {
+        this.title = title;
+        this.image = image;
         this.location = location;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getImage() {
+        return image;
+    }
 
     public Collection<Trek> getTreks() {
         return treks;

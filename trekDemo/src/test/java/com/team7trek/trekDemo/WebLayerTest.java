@@ -1,6 +1,10 @@
 package com.team7trek.trekDemo;
 
 
+import com.team7trek.trekDemo.models.Continent;
+import com.team7trek.trekDemo.repositories.ContinentRepository;
+import com.team7trek.trekDemo.repositories.RegionRepository;
+import com.team7trek.trekDemo.repositories.TrekRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,7 +60,7 @@ public class WebLayerTest {
     }
     @Test
     public void shouldBeOkForASingleContinentEndPointWithContinentViewAndContinentModelAttribute() throws Exception {
-        Continent testContinent = new Continent("Africa");
+        Continent testContinent = new Continent("Africa","image","title");
         when(continentRepo.findContinentByLocation("Africa")).thenReturn(testContinent);
         mockMvc.perform(get("/continents/Africa"))
                 .andExpect(status().isOk())
