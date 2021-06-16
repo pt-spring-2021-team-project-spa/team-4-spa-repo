@@ -1,7 +1,7 @@
 package com.team7trek.trekDemo.controllers;
 
 
-import com.team7trek.trekDemo.RegionRepository;
+import com.team7trek.trekDemo.repositories.RegionRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
