@@ -1,9 +1,52 @@
 package com.team7trek.trekDemo;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Objects;
+
+@Entity
 public class Trek {
-    public Trek(String test_title, String test_difficulty, String test_description, String test_review, String test_image) {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String title;
+    private String difficulty;
+    private String description;
+    private String review;
+    private String image;
+    @ManyToOne
+    private Continent continent;
+    @ManyToMany
+    private Collection<Region> regions;
+
+    public Long getId() {
+        return id;
     }
 
-    public Trek(String test_title, String test_difficulty, String test_description, String test_review, String test_image, Continent testContinent, Region testRegion1) {
+    public Trek() {}
+    public Trek(String title, String difficulty, String description, String review, String image, Continent continent, Region...regions) {
+         this.title = title;
+         this.difficulty = difficulty;
+         this.description = description;
+         this.review = review;
+         this.image = image;
+         this.continent = continent;
+         this.regions = new ArrayList<>(Arrays.asList(regions));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Trek trek = (Trek) o;
+        return Objects.equals(id, trek.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

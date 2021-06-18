@@ -1,6 +1,24 @@
 package com.team7trek.trekDemo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Region {
-    public Region(String test_title, String test_image, String test_climate) {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String title;
+    private String image;
+    private String climate;
+
+
+    public Region(){}
+    public Region(String title, String image, String climate) {
+        this.title = title;
+        this.image = image;
+        this.climate = climate;
     }
 }

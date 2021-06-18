@@ -5,6 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
+import java.util.Optional;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 @DataJpaTest
 public class JPAWiringTest  {
 
@@ -28,6 +32,12 @@ public class JPAWiringTest  {
         regionRepo.save(testRegion1);
         trekRepo.save(testTrek);
 
+        entityManager.flush();
+        entityManager.clear();
 
+        Optional<Continent> retrievedContinentOpt = continentRepo.findById(testContinent.getId());
+        Continent retrievedContinent = retrievedContinentOpt.get();
+        Trek retrievedTrek = trekRepo.findById(testTrek.getId()).get();
+        assertThat(retrievedContinent.getTreks()).contains(testTrek);
     }
 }
