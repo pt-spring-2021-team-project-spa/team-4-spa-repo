@@ -15,7 +15,7 @@ public class JPAWiringTest  {
     public void continentShouldHaveAListOfTreks() {
         Continent testContinent = new Continent("Test Location");
         Region testRegion = new Region("Test title","Test image","Test climate");
-        Trek testTrek = new Trek("Test title","Test difficulty","Test description","Test review","Test image");
+        Trek testTrek = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent,testRegion);
 
     }
 }
