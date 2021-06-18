@@ -10,12 +10,20 @@ public class JPAWiringTest  {
 
     @Autowired
     private TestEntityManager entityManager;
+    @Autowired
+    private ContinentRepository continentRepository;
+    @Autowired
+    private RegionRepository regionRepo;
+    @Autowired
+    private TrekRepository trekRepo;
 
     @Test
     public void continentShouldHaveAListOfTreks() {
         Continent testContinent = new Continent("Test Location");
-        Region testRegion = new Region("Test title","Test image","Test climate");
-        Trek testTrek = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent,testRegion);
+        Region testRegion1 = new Region("Test title","Test image","Test climate");
+        Trek testTrek = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent,testRegion1);
+
+        regionRepo.save(testRegion1);
 
     }
 }
