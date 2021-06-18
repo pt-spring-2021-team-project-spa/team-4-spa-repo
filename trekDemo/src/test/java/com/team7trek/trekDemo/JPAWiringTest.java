@@ -25,19 +25,22 @@ public class JPAWiringTest  {
     @Test
     public void continentShouldHaveAListOfTreks() {
         Continent testContinent = new Continent("Test Location");
+        Continent testContinent2 = new Continent("Test Location2");
         Region testRegion1 = new Region("Test title","Test image","Test climate");
         Trek testTrek = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent,testRegion1);
+        Trek testTrek2 = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent2,testRegion1);
 
         continentRepo.save(testContinent);
+        continentRepo.save(testContinent2);
         regionRepo.save(testRegion1);
         trekRepo.save(testTrek);
+        trekRepo.save(testTrek2);
 
         entityManager.flush();
         entityManager.clear();
 
         Optional<Continent> retrievedContinentOpt = continentRepo.findById(testContinent.getId());
         Continent retrievedContinent = retrievedContinentOpt.get();
-        Trek retrievedTrek = trekRepo.findById(testTrek.getId()).get();
         assertThat(retrievedContinent.getTreks()).contains(testTrek);
     }
 }
