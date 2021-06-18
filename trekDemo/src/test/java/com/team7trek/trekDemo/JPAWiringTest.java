@@ -1,5 +1,11 @@
 package com.team7trek.trekDemo;
 
+import com.team7trek.trekDemo.models.Continent;
+import com.team7trek.trekDemo.models.Region;
+import com.team7trek.trekDemo.models.Trek;
+import com.team7trek.trekDemo.repositories.ContinentRepository;
+import com.team7trek.trekDemo.repositories.RegionRepository;
+import com.team7trek.trekDemo.repositories.TrekRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

@@ -1,4 +1,4 @@
-package com.team7trek.trekDemo;
+package com.team7trek.trekDemo.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
