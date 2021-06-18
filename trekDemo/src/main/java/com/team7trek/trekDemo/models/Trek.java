@@ -25,6 +25,9 @@ public class Trek {
     public Long getId() {
         return id;
     }
+    public Collection<Region> getRegions() {
+        return regions;
+    }
 
     public Trek() {}
     public Trek(String title, String difficulty, String description, String review, String image, Continent continent, Region...regions) {
@@ -49,4 +52,5 @@ public class Trek {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }
