@@ -25,6 +25,24 @@ public class Trek {
     public Long getId() {
         return id;
     }
+    public String getTitle() {
+        return title;
+    }
+    public String getDifficulty() {
+        return difficulty;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public String getReview() {
+        return review;
+    }
+    public String getImage() {
+        return image;
+    }
+    public Continent getContinent() {
+        return continent;
+    }
     public Collection<Region> getRegions() {
         return regions;
     }

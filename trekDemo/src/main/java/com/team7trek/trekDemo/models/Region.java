@@ -22,19 +22,15 @@ public class Region {
     public Long getId() {
         return id;
     }
-
     public String getTitle() {
         return title;
     }
-
     public String getImage() {
         return image;
     }
-
     public String getClimate() {
         return climate;
     }
-
     public Collection<Trek> getTreks(){
         return treks;
     }

@@ -24,15 +24,15 @@ public class Continent {
     public String getLocation() {
         return location;
     }
+    public Collection<Trek> getTreks() {
+        return treks;
+    }
 
     public Continent() {}
     public Continent(String location) {
         this.location = location;
     }
 
-    public Collection<Trek> getTreks() {
-        return treks;
-    }
 
     @Override
     public boolean equals(Object o) {

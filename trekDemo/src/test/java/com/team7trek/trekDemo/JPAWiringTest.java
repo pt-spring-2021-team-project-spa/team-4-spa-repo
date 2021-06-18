@@ -72,6 +72,5 @@ public class JPAWiringTest  {
         Region retrievedRegion1 = regionRepo.findById(testRegion1.getId()).get();
         Region retrievedRegion2 = regionRepo.findById(testRegion2.getId()).get();
         assertThat(retrievedTrek.getRegions()).contains(testRegion1,testRegion2);
-
     }
 }
