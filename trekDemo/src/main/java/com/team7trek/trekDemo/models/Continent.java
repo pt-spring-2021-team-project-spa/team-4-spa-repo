@@ -14,6 +14,8 @@ public class Continent {
     @GeneratedValue
     private Long id;
     private String location;
+    private String title;
+    private String image;
     @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
 
@@ -21,18 +23,30 @@ public class Continent {
         return id;
     }
 
-    public String getLocation() {
-        return location;
-    }
-    public Collection<Trek> getTreks() {
-        return treks;
-    }
-
     public Continent() {}
-    public Continent(String location) {
+
+
+    public Continent(String location,String image,String title) {
+        this.title = title;
+        this.image = image;
         this.location = location;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public Collection<Trek> getTreks() {
+        return treks;
+    }
 
     @Override
     public boolean equals(Object o) {
