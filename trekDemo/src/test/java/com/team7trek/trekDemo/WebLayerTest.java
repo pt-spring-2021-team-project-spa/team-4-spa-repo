@@ -16,6 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 @ExtendWith(SpringExtension.class)
+
 @WebMvcTest
 public class WebLayerTest {
     @MockBean
@@ -41,5 +42,13 @@ public class WebLayerTest {
                 .andExpect(status().isOk())
                 .andExpect(view().name("regionsView"))
                 .andExpect(model().attributeExists("regions"));
+    }
+    @Test
+    public void treksShouldBeOkAndReturnTreksViewWithTreksModelAttribute() throws Exception {
+        mockMvc.perform(get("/treks"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("treksView"))
+                .andExpect(model().attributeExists("treks"));
     }
 }
