@@ -17,9 +17,9 @@ public class TrekController {
         model.addAttribute("treks", trekRepo.findAll());
         return "treksView";
     }
-    @GetMapping("trek/{id}")
-    public String displayTrekByTitle(@PathVariable Long id, Model model) {
-        Optional<Trek> retrievedTrek = trekRepo.findById(id);
+    @GetMapping("trek/{title}")
+    public String displayTrekByTitle(@PathVariable String title, Model model) {
+        Optional<Trek> retrievedTrek = trekRepo.findByTitle(title);
         Trek trek = retrievedTrek.get();
         model.addAttribute("trek", trek);
         return "trekView";

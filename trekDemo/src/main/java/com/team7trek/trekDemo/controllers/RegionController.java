@@ -17,9 +17,9 @@ public class RegionController {
         model.addAttribute("regions", regionRepo.findAll());
         return "regionsView";
     }
-    @GetMapping("regions/{id}")
-    public String displayRegionById(@PathVariable long id, Model model) {
-        Optional<Region> retrievedRegion = regionRepo.findById(id);
+    @GetMapping("regions/{title}")
+    public String displayRegionById(@PathVariable String title, Model model) {
+        Optional<Region> retrievedRegion = regionRepo.findByTitle(title);
         Region region = retrievedRegion.get();
         model.addAttribute("region",region);
         return "regionView";
