@@ -32,6 +32,14 @@ public class WebLayerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("continentsView"))
-                .andExpect(model().attributeExists("continent"));
+                .andExpect(model().attributeExists("continents"));
+    }
+    @Test
+    public void regionsShouldBeOkAndReturnRegionsViewWithRegionsModelAttribute() throws Exception {
+        mockMvc.perform(get("/regions"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("regionsView"))
+                .andExpect(model().attributeExists("region"));
     }
 }
