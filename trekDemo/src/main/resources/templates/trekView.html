@@ -3,9 +3,17 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Trek</title>
+    <title>Treks</title>
 </head>
 <body>
-<h1 th:text="${trek.title}">Trek</h1>
+<h1>Welcome to we can Trek!</h1>
+
+<div th:each="trek: ${trek}">
+    <main>
+        <img th:src="${trek.image}">
+
+        <p th:text="'Trek Name: ' + ${trek.title}"></p>
+    </main>
+</div>
 </body>
 </html>
