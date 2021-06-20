@@ -15,8 +15,6 @@ public class Continent {
     private String location;
     @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
-    @ManyToMany
-    private Collection<Region> regions;
 
     public Long getId() {
         return id;
@@ -28,14 +26,10 @@ public class Continent {
     public Collection<Trek> getTreks() {
         return treks;
     }
-    public Collection<Region> getRegions() {
-        return regions;
-    }
 
     public Continent() {}
-    public Continent(String location, Region...regions) {
+    public Continent(String location) {
         this.location = location;
-        this.regions = new ArrayList<>(Arrays.asList(regions));
     }
 
 

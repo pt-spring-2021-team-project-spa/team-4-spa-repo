@@ -1,9 +1,6 @@
 package com.team7trek.trekDemo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -18,8 +15,6 @@ public class Region {
     private String climate;
     @ManyToMany(mappedBy = "regions")
     private Collection<Trek> treks;
-    @ManyToMany(mappedBy = "regions")
-    private Collection<Trek> regions;
 
     public Long getId() {
         return id;
