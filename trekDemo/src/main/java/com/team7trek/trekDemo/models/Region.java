@@ -18,6 +18,8 @@ public class Region {
     private String climate;
     @ManyToMany(mappedBy = "regions")
     private Collection<Trek> treks;
+    @ManyToMany(mappedBy = "regions")
+    private Collection<Trek> regions;
 
     public Long getId() {
         return id;

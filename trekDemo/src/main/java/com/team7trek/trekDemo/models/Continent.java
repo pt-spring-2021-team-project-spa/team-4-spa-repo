@@ -1,9 +1,8 @@
 package com.team7trek.trekDemo.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -16,6 +15,8 @@ public class Continent {
     private String location;
     @OneToMany(mappedBy = "continent")
     private Collection<Trek> treks;
+    @ManyToMany
+    private Collection<Region> regions;
 
     public Long getId() {
         return id;
@@ -27,10 +28,14 @@ public class Continent {
     public Collection<Trek> getTreks() {
         return treks;
     }
+    public Collection<Region> getRegions() {
+        return regions;
+    }
 
     public Continent() {}
-    public Continent(String location) {
+    public Continent(String location, Region...regions) {
         this.location = location;
+        this.regions = new ArrayList<>(Arrays.asList(regions));
     }
 
 
@@ -46,4 +51,5 @@ public class Continent {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

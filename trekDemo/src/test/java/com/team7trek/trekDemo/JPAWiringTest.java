@@ -73,4 +73,23 @@ public class JPAWiringTest  {
         Region retrievedRegion2 = regionRepo.findById(testRegion2.getId()).get();
         assertThat(retrievedTrek.getRegions()).contains(testRegion1,testRegion2);
     }
+
+    @Test
+    public void continentShouldHaveAListOfRegions() {
+        Continent testContinent = new Continent("Test Location");
+        Region testRegion1 = new Region("Test title","Test image","Test climate");
+        Region testRegion2 = new Region("Test title","Test image","Test climate");
+        Trek testTrek1 = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent,testRegion1);
+        continentRepo.save(testContinent);
+        regionRepo.save(testRegion1);
+        regionRepo.save(testRegion2);
+        trekRepo.save(testTrek1);
+        entityManager.flush();
+        entityManager.clear();
+
+        Optional<Continent> retrievedContinentOpt = continentRepo.findById(testContinent.getId());
+        Continent retrievedContinent = retrievedContinentOpt.get();
+        assertThat(retrievedContinent.getRegions()).contains(testRegion1, testRegion2);
+
+    }
 }
