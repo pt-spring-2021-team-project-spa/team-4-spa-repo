@@ -51,4 +51,13 @@ public class WebLayerTest {
                 .andExpect(view().name("treksView"))
                 .andExpect(model().attributeExists("treks"));
     }
+    @Test
+    public void shouldBeOkForASingleContinentEndPointWithContinentViewAndContinentModelAttribute() throws Exception {
+        Continent testContinent = new Continent("Africa","title","image");
+        when(continentRepo.findContinentByLocation("Africa")).thenReturn(testContinent);
+        mockMvc.perform(get("/continents/Africa"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("continentView"))
+                .andExpect(model().attributeExists("continent"));
+    }
 }
