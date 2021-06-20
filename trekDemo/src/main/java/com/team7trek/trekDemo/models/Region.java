@@ -1,21 +1,31 @@
 package com.team7trek.trekDemo.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 public class Region {
-
     @Id
     @GeneratedValue
     private Long id;
     private String title;
     private String image;
     private String climate;
-    @ManyToMany(mappedBy = "regions")
+    @ManyToOne
+    private Continent continent;
+    @OneToMany(mappedBy = "region")
     private Collection<Trek> treks;
-
+    public Region(){}
+    public Region(String title, String image, String climate,Continent continent,Trek... treks) {
+        this.continent = continent;
+        this.treks = new ArrayList<>(Arrays.asList(treks));
+        this.title = title;
+        this.image = image;
+        this.climate = climate;
+    }
     public Long getId() {
         return id;
     }
@@ -31,14 +41,9 @@ public class Region {
     public Collection<Trek> getTreks(){
         return treks;
     }
-
-    public Region(){}
-    public Region(String title, String image, String climate) {
-        this.title = title;
-        this.image = image;
-        this.climate = climate;
-    }
-
+    public Continent getContinent() {
+        return continent;
+}
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
