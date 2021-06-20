@@ -40,6 +40,6 @@ public class WebLayerTest {
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("regionsView"))
-                .andExpect(model().attributeExists("region"));
+                .andExpect(model().attributeExists("regions"));
     }
 }
