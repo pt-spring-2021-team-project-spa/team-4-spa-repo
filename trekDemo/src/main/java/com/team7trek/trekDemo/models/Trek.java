@@ -21,28 +21,53 @@ public class Trek {
     @ManyToOne
     private Region region;
     public Long getId() {
-        return id;
+    return id;
+}
+    public Trek() {
+
     }
+    public Trek(String image,String title, String difficulty, String description, Continent continent, String review, Region...regions) {
+        this.title = title;
+        this.description = description;
+        this.difficulty = difficulty;
+        this.continent = continent;
+        this.review = review;
+        this.image = image;
+        this.regions = new ArrayList<>(Arrays.asList(regions));
+    }
+
     public String getTitle() {
         return title;
     }
+
     public String getDifficulty() {
         return difficulty;
     }
+
     @Lob
     public String getDescription() {
         return description;
     }
     @Lob
+
+
+    public String getDescription() {
+        return description;
+    }
+
+
     public String getReview() {
         return review;
     }
+
     public String getImage() {
         return image;
     }
+
     public Continent getContinent() {
         return continent;
     }
+
     public Region getRegions(){
         return region;
     }
@@ -57,6 +82,12 @@ public class Trek {
         this.region = regions;
     }
 
+
+    public Collection<Region> getRegions() {
+        return regions;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -69,5 +100,4 @@ public class Trek {
     public int hashCode() {
         return Objects.hash(id);
     }
-
 }

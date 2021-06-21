@@ -12,9 +12,13 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
-
 @DataJpaTest
+
 public class JPAWiringTest  {
+
+public class JPAWiringTest {
+
+
     @Autowired
     private TestEntityManager entityManager;
     @Autowired
@@ -24,12 +28,22 @@ public class JPAWiringTest  {
     @Autowired
     private TrekRepository trekRepo;
     @Test
+
     public void continentShouldHaveAListOfRegions() {
         Continent testContinent = new Continent("Test Location","title","image");
         Continent testContinent2 = new Continent("Test Location2","title","image");
         Region testRegion1 = new Region("Test title","Test image","Test climate",testContinent);
         Trek testTrek = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent,testRegion1);
         Trek testTrek2 = new Trek("Test title","Test difficulty","Test description","Test review","Test image", testContinent2,testRegion1);
+
+    public void ContinentShouldHaveAListTreks() {
+        Continent testContinent = new Continent("Test Location","image","title");
+        Continent testContinent2 = new Continent("Test Location2","image","title");
+        Region testRegion1 = new Region("Test climate","image","title");
+        Trek testTrek = new Trek("image", "title", "difficulty","description", testContinent, "Review", testRegion1);
+        Trek testTrek2 = new Trek("image", "title", "difficulty","description", testContinent2, "Review", testRegion1);
+
+
         continentRepo.save(testContinent);
         continentRepo.save(testContinent2);
         regionRepo.save(testRegion1);
@@ -41,6 +55,7 @@ public class JPAWiringTest  {
         Continent retrievedContinent = retrievedContinentOpt.get();
         assertThat(retrievedContinent.getRegions()).contains(testRegion1);
     }
+
     @Test
     public void regionsShouldHaveMultipleTreks() {
         Continent testContinent = new Continent("Test Location","title","image");
@@ -61,3 +76,6 @@ public class JPAWiringTest  {
         assertThat(retrievedRegion.getTreks()).contains(testTrek1,testTrek2);
     }
 }
+
+}
+

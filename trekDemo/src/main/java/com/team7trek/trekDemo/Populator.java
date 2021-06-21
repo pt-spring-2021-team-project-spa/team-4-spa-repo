@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 public class Populator implements CommandLineRunner {
     @Resource
     private TrekRepository trekRepo;
+
     @Resource
     private ContinentRepository continentRepo;
     @Resource
@@ -26,6 +27,24 @@ public class Populator implements CommandLineRunner {
         Continent antarctica = new Continent("Antarctica","title","image");
         Continent africa = new Continent("Africa","title","image");
         Continent australia = new Continent("Australia","title","image");
+
+
+    @Resource
+    private ContinentRepository continentRepo;
+
+    @Resource
+    private RegionRepository regionRepo;
+
+    @Override
+    public void run(String... args) throws Exception {
+        Continent northAmerica = new Continent("North America","img","title");
+        Continent southAmerica = new Continent("South America","image","title");
+        Continent europe = new Continent("Europe","image","title");
+        Continent asia = new Continent("Asia","image","title");
+        Continent antarctica = new Continent("Antarctica","image","title");
+        Continent africa = new Continent("Africa","image","title");
+        Continent australia = new Continent("Australia","image","title");
+
         continentRepo.save(northAmerica);
         continentRepo.save(southAmerica);
         continentRepo.save(europe);
@@ -33,6 +52,7 @@ public class Populator implements CommandLineRunner {
         continentRepo.save(antarctica);
         continentRepo.save(africa);
         continentRepo.save(australia);
+
         Region northAmerica1 = new Region("NorthAmerica1","image","climate",northAmerica);
         Region northAmerica2 = new Region("NorthAmerica2","image","climate",northAmerica);
         Region southAmerica2 = new Region("SouthAmerica1","image","climate",southAmerica);
@@ -47,6 +67,8 @@ public class Populator implements CommandLineRunner {
         Region africa2 = new Region("Africa2","image","climate",africa);
         Region australia1 = new Region("Australia1","images","climate",australia);
         Region australia2 = new Region("Australia2","image","climate",australia);
+
+
         regionRepo.save(northAmerica1);
         regionRepo.save(northAmerica2);
         regionRepo.save(southAmerica1);
@@ -61,6 +83,7 @@ public class Populator implements CommandLineRunner {
         regionRepo.save(africa2);
         regionRepo.save(australia1);
         regionRepo.save(australia2);
+
         Trek na1 = new Trek("Bike","difficulty","description","review","image",northAmerica,northAmerica1);
         Trek na2 = new Trek("title2","difficulty","description","review","image",northAmerica,northAmerica1);
         Trek na3 = new Trek("title3","difficulty","description","review","image",northAmerica,northAmerica2);
@@ -89,6 +112,7 @@ public class Populator implements CommandLineRunner {
         Trek aus2 = new Trek("title2","difficulty","description","review","image",australia,australia1);
         Trek aus3 = new Trek("title3","difficulty","description","review","image",australia,australia2);
         Trek aus4 = new Trek("title4","difficulty","description","review","image",australia,australia2);
+
         trekRepo.save(na1);
         trekRepo.save(na2);
         trekRepo.save(na3);
@@ -120,3 +144,4 @@ public class Populator implements CommandLineRunner {
         trekRepo.save(aus4);
     }
 }
+

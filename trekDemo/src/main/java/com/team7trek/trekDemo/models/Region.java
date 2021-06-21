@@ -1,19 +1,25 @@
 package com.team7trek.trekDemo.models;
 
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
 @Entity
 public class Region {
     @Id
     @GeneratedValue
     private Long id;
-    private String title;
-    private String image;
     private String climate;
+
     @ManyToOne
     private Continent continent;
     @OneToMany(mappedBy = "region")
@@ -26,18 +32,22 @@ public class Region {
         this.image = image;
         this.climate = climate;
     }
+
+    private String image;
+    private String title;
+    public Region () {
+
+    }
+
+
     public Long getId() {
         return id;
     }
-    public String getTitle() {
-        return title;
-    }
-    public String getImage() {
-        return image;
-    }
+
     public String getClimate() {
         return climate;
     }
+
     public Collection<Trek> getTreks(){
         return treks;
     }
@@ -50,10 +60,20 @@ public class Region {
         if (o == null || getClass() != o.getClass()) return false;
         Region region = (Region) o;
         return Objects.equals(id, region.id);
+
+
+    public String getImage() {
+        return image;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+    public String getTitle() {
+        return title;
+
+    }
+
+    public Region(String climate, String image, String title) {
+        this.climate = climate;
+        this.image = image;
+        this.title = title;
     }
 }
