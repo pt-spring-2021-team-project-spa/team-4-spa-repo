@@ -1,9 +1,6 @@
 package org.wecancodeit.mysteryeducator.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -28,6 +25,9 @@ public class History {
     public String getSynapse() {
         return synapse;
     }
+
+    @ManyToOne
+    private Planet planet;
 
     public History() {
 

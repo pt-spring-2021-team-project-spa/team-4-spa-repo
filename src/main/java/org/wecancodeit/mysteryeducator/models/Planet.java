@@ -1,13 +1,11 @@
 package org.wecancodeit.mysteryeducator.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Lob;
+import javax.persistence.*;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Planets {
+public class Planet {
     @Id
     @GeneratedValue
     private Long id;
@@ -16,6 +14,12 @@ public class Planets {
     private String description;
     private String distance;
     private String size;
+
+    @OneToMany(mappedBy = "planets")
+    private Collection<Art> artForms;
+
+    @OneToMany
+    private Collection<History> historyInfo;
 
     public Long getId() {
         return id;
@@ -37,11 +41,11 @@ public class Planets {
         return size;
     }
 
-    public Planets() {
+    public Planet() {
 
     }
 
-    public Planets(Long id, String name, String description, String distance, String size) {
+    public Planet(Long id, String name, String description, String distance, String size) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -53,8 +57,8 @@ public class Planets {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Planets planets = (Planets) o;
-        return Objects.equals(id, planets.id) && Objects.equals(name, planets.name) && Objects.equals(description, planets.description) && Objects.equals(distance, planets.distance) && Objects.equals(size, planets.size);
+        Planet planet = (Planet) o;
+        return Objects.equals(id, planet.id) && Objects.equals(name, planet.name) && Objects.equals(description, planet.description) && Objects.equals(distance, planet.distance) && Objects.equals(size, planet.size);
     }
 
     @Override
