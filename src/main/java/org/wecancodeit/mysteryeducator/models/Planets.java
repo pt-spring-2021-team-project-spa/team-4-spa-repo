@@ -13,10 +13,7 @@ public class Planets {
     private String description;
     private String distance;
     private String size;
-    @OneToOne
-    private History history;
-    @OneToOne
-    private Art art;
+
 
     public Long getId() {
         return id;
@@ -38,20 +35,12 @@ public class Planets {
         return size;
     }
 
-    public History getHistory() {
-        return history;
-    }
-
-    public Art getArt() {
-        return art;
-    }
 
     public Planets() {
 
     }
 
-    public Planets(Long id, String name, String description, String distance, String size) {
-        this.id = id;
+    public Planets(String name, String description, String distance, String size) {
         this.name = name;
         this.description = description;
         this.distance = distance;

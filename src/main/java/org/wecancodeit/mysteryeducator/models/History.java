@@ -33,10 +33,9 @@ public class History {
 
     }
 
-    public History(Long id, String bio, String synapse) {
-        this.id = id;
+    public History(String bio, String synopsis) {
         this.bio = bio;
-        this.synopsis = synapse;
+        this.synopsis = synopsis;
     }
 
     @Override
