@@ -1,4 +1,4 @@
-package models;
+package org.wecancodeit.mysteryeducator.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

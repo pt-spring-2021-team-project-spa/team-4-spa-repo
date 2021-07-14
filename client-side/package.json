@@ -9,7 +9,7 @@
     "test": "jest --watchAll"
   },
   "keywords": [],
-  "author": "",
+  "author": "Team 4",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.14.6",
