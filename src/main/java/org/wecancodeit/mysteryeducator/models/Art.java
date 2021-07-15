@@ -1,38 +1,37 @@
 package org.wecancodeit.mysteryeducator.models;
 
-import javax.persistence.*;
-import java.util.Collection;
-import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Art {
-
     @Id
     @GeneratedValue
     private Long id;
-    private String music;
-    private String painting;
-
-    @ManyToOne
-    private Collection<Planet> planets;
+    private String apiLink;
+    @Lob
+    private String artworkBio;
 
     public Long getId() {
         return id;
     }
-
-    public String getMusic() {
-        return music;
+  
+    public String getApiLinkt() {
+        return apiLink;
     }
 
-    public String getPainting() {
-        return painting;
+    public String getArtworkBio() {
+        return artworkBio;
     }
 
-    public Art(Long id, String music, String painting) {
-        this.id = id;
-        this.music = music;
-        this.painting = painting;
+    public Art() {
+
     }
 
+    public Art(String apiLink, String artworkBio) {
+        this.apiLink = apiLink;
+        this.artworkBio = artworkBio;
+    }
 }
-

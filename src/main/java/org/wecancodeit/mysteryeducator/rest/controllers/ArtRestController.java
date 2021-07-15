@@ -16,12 +16,14 @@ public class ArtRestController {
     private ArtRepository artRepo;
 
     @GetMapping("/api/arts")
-    public Collection<Art> getArtForms() {
+
+    public Collection<Art> getArt() {
         return (Collection<Art>) artRepo.findAll();
     }
 
-    @GetMapping("/api/arts/{artId}")
-    public Art getArt(@PathVariable Long artId) {
-        return artRepo.findById(artId).get();
+    @GetMapping("/api/arts/{id}")
+    public Art getArt(@PathVariable Long id) {
+        return artRepo.findById(id).get();
     }
+
 }
