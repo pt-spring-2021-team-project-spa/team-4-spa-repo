@@ -59,19 +59,19 @@ public class Populator implements CommandLineRunner {
 
 
 
-       Planets mercury = new Planets("Mercury", "Test Description", "30,915 million miles from the sun.", "Mercury has a diameter of 3,030 miles. Mercury is a little more than 1/3 the size of Earth." );
+       Planets mercury = new Planets("Mercury", "Mercury is sometimes referred to as 'The Swift Planet.' The planet Mercury is the planet closest to the sun. Due to its proximity, it orbits the sun faster than any of the other planets. A year on Mercury is only 88 days. Mercury is also the smallest planet recognized by our solar system.", "30,915 million miles from the sun.", "Mercury has a diameter of 3,030 miles. Mercury is a little more than 1/3 the size of Earth.", mercuryHistory, mercuryArt);
        planetsRepo.save(mercury);
-       Planets venus = new Planets("Venus", "Test Description", "66,958 million miles from the sun.", "Venus has a diameter of 7,520 miles. Venus is often referred to as Earth's twin due to the fact it is 95% of the size of Earth.");
+       Planets venus = new Planets("Venus", "Despite being a planet and not a star, Venus is sometimes referred to by the nicknames of 'The Morning Star' and 'The Evening Star.' A day on Venus is longer than a year. It takes the planet longer to rotate once around its own axis than to rotate around the sun. From Earth, Venus is the second brightest object in the sky next to the moon. Also, despite being further from the sun than Mercury, Venus is actually the warmer planet.", "66,958 million miles from the sun.", "Venus has a diameter of 7,520 miles. Venus is often referred to as Earth's twin due to the fact it is 95% of the size of Earth.", venusHistory, venusArt);
        planetsRepo.save(venus);
-       Planets earth = new Planets("Earth", "Test Description", "94,488 million miles from the sun.", "Earth has a diameter of 7,918 miles.");
+       Planets earth = new Planets("Earth", "Often referred to as 'The Blue Planet,' the Earth is made up of 70% water. Earth's abundance of water and oxygen make it the only planet known to contain life, in fact, millions of different forms of life. " , "94,488 million miles from the sun.", "Earth has a diameter of 7,918 miles.", earthHistory,earthArt);
        planetsRepo.save(earth);
-       Planets mars = new Planets("Mars", "Test Description", "155,780 million miles from the sun.","Mars has a diameter of 4,212 miles. Mars is slightly larger than half the size of Earth.");
+       Planets mars = new Planets("Mars", "Test Description", "155,780 million miles from the sun.","Mars has a diameter of 4,212 miles. Mars is slightly larger than half the size of Earth.", marsHistory, marsArt);
        planetsRepo.save(mars);
-       Planets jupiter = new Planets("Jupiter", "Test Description", "468,280 million miles from the sun.", "Jupiter has a diameter of 86,881 miles. Jupiter is almost 318 times as large as Earth.");
+       Planets jupiter = new Planets("Jupiter", "Test Description", "468,280 million miles from the sun.", "Jupiter has a diameter of 86,881 miles. Jupiter is almost 318 times as large as Earth.", jupiterHistory, jupiterArt);
        planetsRepo.save(jupiter);
-       Planets uranus = new Planets("Uranus", "Test Description", "1.835 billion miles from the sun." , "Uranus has a diameter of 31,518 miles. Uranus is four times larger than Earth.");
+       Planets uranus = new Planets("Uranus", "Test Description", "1.835 billion miles from the sun." , "Uranus has a diameter of 31,518 miles. Uranus is four times larger than Earth.", uranusHistory, uranusArt);
        planetsRepo.save(uranus);
-       Planets neptune = new Planets("Neptune", "Test Description", "2.785 billion miles from the sun.", "Neptune has a diamter of 30,599 miles. Neptune is very similar in size to Uranus and is 3.9 times larger than Earth.");
+       Planets neptune = new Planets("Neptune", "Test Description", "2.785 billion miles from the sun.", "Neptune has a diamter of 30,599 miles. Neptune is very similar in size to Uranus and is 3.9 times larger than Earth.", neptuneHistory, neptuneArt);
        planetsRepo.save(neptune);
 
     }
