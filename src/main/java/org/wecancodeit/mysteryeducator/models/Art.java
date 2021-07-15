@@ -17,7 +17,7 @@ public class Art {
     public Long getId() {
         return id;
     }
-
+  
     public String getApiLinkt() {
         return apiLink;
     }

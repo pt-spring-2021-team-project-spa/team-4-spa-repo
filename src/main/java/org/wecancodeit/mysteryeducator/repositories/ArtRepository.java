@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface ArtRepository extends CrudRepository<Art, Long> {
     Optional<Art> findById(Long id);
-
 }

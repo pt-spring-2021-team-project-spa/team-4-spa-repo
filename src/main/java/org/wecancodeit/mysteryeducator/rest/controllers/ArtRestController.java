@@ -11,10 +11,12 @@ import java.util.Collection;
 
 @RestController
 public class ArtRestController {
+
     @Resource
     private ArtRepository artRepo;
 
     @GetMapping("/api/arts")
+
     public Collection<Art> getArt() {
         return (Collection<Art>) artRepo.findAll();
     }
@@ -25,4 +27,3 @@ public class ArtRestController {
     }
 
 }
-
