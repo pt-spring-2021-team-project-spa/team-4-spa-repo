@@ -12,5 +12,5 @@ public class MysteryEducatorApplication {
 		System.out.println("Server Side is wired up!");
 	}
 
-	
+
 }
