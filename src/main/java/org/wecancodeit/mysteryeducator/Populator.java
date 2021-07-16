@@ -45,13 +45,13 @@ public class Populator implements CommandLineRunner {
         artRepo.save(neptuneArt);
         Art venusArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/250153/541602/main-image","The missing lower portion of this statuette makes it difficult to determine if the woman depicted was clothed. However, her preserved left hand, which pulls back her hair, recalls the gesture of Venus after she emerged newly born from the sea, the subject of a famous Greek sculptural type of the third to second century B.C.");
         artRepo.save(venusArt);
-        Art earthArt = new Art("","");
+        Art earthArt = new Art("https://www.metmuseum.org/art/collection/search/208976","Our terracotta girl formerly grasped an olive branch of peace along with the drapery in her lowered hand, while the upraised hand once brandished a trumpet.");
         artRepo.save(earthArt);
         Art marsArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/250709/533111/main-image", "Mars was one of the more important gods of the Roman pantheon. Numerous temples, shrines, and altars were dedicated to him in Rome and throughout the Empire. As the god of war, he had many of the same attributes as the Greek god Ares, but he was also closely associated with the imperial cult, since the emperor's power and popularity depended heavily on the army and its military successes. Mars was therefore often depicted on monuments celebrating imperial victories, notably on triumphal arches, a distinctively Roman type of public building. This fragment presumably comes from one such monument, perhaps even from the now lost Portico of Septimius Severus in Rome. Mars is represented in the canonical guise of an older, bearded man wearing a Corinthian helmet tipped back on his head.");
         artRepo.save(marsArt);
-        Art jupiterArt = new Art("","");
+        Art jupiterArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/209020/485809/main-image","This group is the sculptor's working model for one of two monumental stone sculptures completed in 1870 and still in the garden of the palace at Fontainbleau");
         artRepo.save(jupiterArt);
-        Art uranusArt = new Art("", "");
+        Art uranusArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/460164/912801/main-image", "The story of Hercules: the gods called upon Hercules to help them defend Olympus against the attack of the Giants, sons of Uranus and Gaea (Heaven and Earth)");
         artRepo.save(uranusArt);
         Art mercuryArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/380572/773414/main-image", "1 of 30 illustrations etched by Hollar for an edition of The Aeneid.\n" + "In a square in Carthage, Mercury approaching Aeneas from the air, warning him to leave the city; Ascanius and a middle-aged man standing by at right; stone mason working at centre foreground, workmen shovelling stones and carrying stone blocks at left, others working on buildings in background; statue of Diana in a niche at right; coat of arms below image at centre.");
         artRepo.save(mercuryArt);
@@ -65,13 +65,13 @@ public class Populator implements CommandLineRunner {
        planetsRepo.save(venus);
        Planets earth = new Planets("Earth", "Often referred to as 'The Blue Planet,' the Earth is made up of 70% water. Earth's abundance of water and oxygen make it the only planet known to contain life, in fact, millions of different forms of life. " , "94,488 million miles from the sun.", "Earth has a diameter of 7,918 miles.", earthHistory,earthArt);
        planetsRepo.save(earth);
-       Planets mars = new Planets("Mars", "Test Description", "155,780 million miles from the sun.","Mars has a diameter of 4,212 miles. Mars is slightly larger than half the size of Earth.", marsHistory, marsArt);
+       Planets mars = new Planets("Mars", "Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System, being larger than only Mercury. ", "155,780 million miles from the sun.","Mars has a diameter of 4,212 miles. Mars is slightly larger than half the size of Earth.", marsHistory, marsArt);
        planetsRepo.save(mars);
-       Planets jupiter = new Planets("Jupiter", "Test Description", "468,280 million miles from the sun.", "Jupiter has a diameter of 86,881 miles. Jupiter is almost 318 times as large as Earth.", jupiterHistory, jupiterArt);
+       Planets jupiter = new Planets("Jupiter", "It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.", "468,280 million miles from the sun.", "Jupiter has a diameter of 86,881 miles. Jupiter is almost 318 times as large as Earth.", jupiterHistory, jupiterArt);
        planetsRepo.save(jupiter);
-       Planets uranus = new Planets("Uranus", "Test Description", "1.835 billion miles from the sun." , "Uranus has a diameter of 31,518 miles. Uranus is four times larger than Earth.", uranusHistory, uranusArt);
+       Planets uranus = new Planets("Uranus", "Uranus, who, according to Greek mythology, was the great-grandfather of Ares, grandfather of Zeus and father of Cronus. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.", "1.835 billion miles from the sun." , "Uranus has a diameter of 31,518 miles. Uranus is four times larger than Earth.", uranusHistory, uranusArt);
        planetsRepo.save(uranus);
-       Planets neptune = new Planets("Neptune", "Test Description", "2.785 billion miles from the sun.", "Neptune has a diamter of 30,599 miles. Neptune is very similar in size to Uranus and is 3.9 times larger than Earth.", neptuneHistory, neptuneArt);
+       Planets neptune = new Planets("Neptune", "In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.", "2.785 billion miles from the sun.", "Neptune has a diameter of 30,599 miles. Neptune is very similar in size to Uranus and is 3.9 times larger than Earth.", neptuneHistory, neptuneArt);
        planetsRepo.save(neptune);
 
     }
