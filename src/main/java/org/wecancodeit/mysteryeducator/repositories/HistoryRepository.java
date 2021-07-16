@@ -8,3 +8,4 @@ public interface HistoryRepository extends CrudRepository <History, Long> {
     Optional<History> findById(Long id);
 }
 
+
