@@ -11,7 +11,7 @@ export default function Header() {
                       </div>
                   </div>
                   <a href=#about-us-section><button id="about-us-button" class="about-us-btn">About Us</button></a>
-                  <a href=#contact-us-section><button id="contact-button" class="contact-btn">Contact</button></a>
+                  <a href=#contact-us-section><button id="contact-button" class="contact-btn">Contact Us</button></a>
               </nav>
           </header>
     `

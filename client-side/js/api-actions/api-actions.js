@@ -5,6 +5,8 @@ function getRequest(location, callback) {
     .catch((err) => console.log(err));
 }
 
+
+
 export default {
   getRequest,
 };
