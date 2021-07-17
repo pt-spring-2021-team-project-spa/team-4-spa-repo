@@ -1,0 +1,17 @@
+.nav-list li {
+    background-color: blue;
+    border-radius: 10px;
+    color: #fff;
+    list-style-type: none;
+    padding: 1rem;
+  }
+  
+  .nav-list li:hover {
+    background-color: lightblue;
+    color: #888;
+    transition: 0.5s;
+  }
+  .nav-list {
+    display: flex;
+    justify-content: space-evenly;
+  }
