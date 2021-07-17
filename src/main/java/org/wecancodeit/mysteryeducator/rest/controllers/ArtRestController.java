@@ -22,7 +22,7 @@ public class ArtRestController {
     }
 
     @GetMapping("/api/arts/{id}")
-    public Art getArt(@PathVariable Long id) {
+    public Art getOneArt(@PathVariable Long id) {
         return artRepo.findById(id).get();
     }
 

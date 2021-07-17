@@ -23,7 +23,7 @@ public class PlanetsRestController {
     }
 
     @GetMapping("/api/planets/{id}")
-    public Planets getPlanets(@PathVariable Long id) {
+    public Planets getOnePlanets(@PathVariable Long id) {
         return planetsRepo.findById(id).get();
     }
 
