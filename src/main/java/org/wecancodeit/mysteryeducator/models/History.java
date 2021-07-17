@@ -1,5 +1,9 @@
 package org.wecancodeit.mysteryeducator.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,7 +16,9 @@ public class History {
     @Lob
     private String bio;
     @Lob
-    private String synapse;
+
+    private String synopsis;
+
 
     public Long getId() {
         return id;
@@ -22,21 +28,19 @@ public class History {
         return bio;
     }
 
-    public String getSynapse() {
-        return synapse;
+
+    public String getSynopsis() {
+        return synopsis;
     }
-
-    @ManyToOne
-    private Planet planet;
-
+  
     public History() {
 
     }
 
-    public History(Long id, String bio, String synapse) {
-        this.id = id;
+
+    public History(String bio, String synopsis) {
         this.bio = bio;
-        this.synapse = synapse;
+        this.synopsis = synopsis;
     }
 
     @Override
@@ -44,11 +48,15 @@ public class History {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         History history = (History) o;
-        return Objects.equals(id, history.id) && Objects.equals(bio, history.bio) && Objects.equals(synapse, history.synapse);
+
+        return Objects.equals(id, history.id) && Objects.equals(bio, history.bio) && Objects.equals(synopsis, history.synopsis);
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, bio, synapse);
+
+        return Objects.hash(id, bio, synopsis);
+
     }
 }

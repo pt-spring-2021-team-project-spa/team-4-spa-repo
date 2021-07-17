@@ -1,11 +1,10 @@
 package org.wecancodeit.mysteryeducator.models;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
-public class Planet {
+public class Planets {
     @Id
     @GeneratedValue
     private Long id;
@@ -14,12 +13,11 @@ public class Planet {
     private String description;
     private String distance;
     private String size;
+    @OneToOne
+    private History history;
+    @OneToOne
+    private Art art;
 
-    @OneToMany(mappedBy = "planets")
-    private Collection<Art> artForms;
-
-    @OneToMany
-    private Collection<History> historyInfo;
 
     public Long getId() {
         return id;
@@ -41,28 +39,35 @@ public class Planet {
         return size;
     }
 
-    public Planet() {
+    public History getHistory() {return history;}
+
+    public Art getArt() {return art;}
+
+
+    public Planets() {
 
     }
 
-    public Planet(Long id, String name, String description, String distance, String size) {
-        this.id = id;
+    public Planets(String name, String description, String distance, String size, History history, Art art) {
         this.name = name;
         this.description = description;
         this.distance = distance;
         this.size = size;
+        this.history = history;
+        this.art = art;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Planet planet = (Planet) o;
-        return Objects.equals(id, planet.id) && Objects.equals(name, planet.name) && Objects.equals(description, planet.description) && Objects.equals(distance, planet.distance) && Objects.equals(size, planet.size);
+        Planets planets = (Planets) o;
+        return Objects.equals(id, planets.id) && Objects.equals(name, planets.name) && Objects.equals(description, planets.description) && Objects.equals(distance, planets.distance) && Objects.equals(size, planets.size);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(id, name, description, distance, size);
     }
+
 }
