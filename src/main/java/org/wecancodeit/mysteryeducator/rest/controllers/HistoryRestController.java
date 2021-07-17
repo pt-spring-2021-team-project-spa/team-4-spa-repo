@@ -22,7 +22,7 @@ public class HistoryRestController {
     }
 
     @GetMapping("/api/history/{id}")
-    public History getHistory(@PathVariable Long id) {
+    public History getOneHistory(@PathVariable Long id) {
         return historyRepo.findById(id).get();
     }
 
