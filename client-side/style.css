@@ -90,13 +90,6 @@
   display: block;
 }
 
-.grid-container {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr 1fr;
-  padding: 50px;
-}
-
 .space-kids {
   border-radius: 8px;
   display: block;
