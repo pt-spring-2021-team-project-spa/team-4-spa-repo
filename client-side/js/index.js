@@ -30,4 +30,10 @@ function footer() {
 //     });
 //   }
 
-
+function navPlanets() {
+    const planetsElem = document.querySelector('.');
+    planetsElem.addEventListener('click', () => {
+        const app = document.querySelector(#app);
+        app.innerHTML = 
+    })
+}
