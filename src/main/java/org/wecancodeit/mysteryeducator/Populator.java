@@ -69,6 +69,7 @@ public class Populator implements CommandLineRunner {
        planetsRepo.save(mars);
        Planets jupiter = new Planets("Jupiter", "It is a gas giant with a mass more than two and a half times that of all the other planets in the Solar System combined, but slightly less than one-thousandth the mass of the Sun.", "468,280 million miles from the sun.", "Jupiter has a diameter of 86,881 miles. Jupiter is almost 318 times as large as Earth.", jupiterHistory, jupiterArt);
        planetsRepo.save(jupiter);
+       Planets saturn = new Planets("Saturn", "Test Description", "923.55 million miles from the sun.", "Saturn has a diameter of 72,367 miles.", saturnHistory,); 
        Planets uranus = new Planets("Uranus", "Uranus, who, according to Greek mythology, was the great-grandfather of Ares, grandfather of Zeus and father of Cronus. It has the third-largest planetary radius and fourth-largest planetary mass in the Solar System.", "1.835 billion miles from the sun." , "Uranus has a diameter of 31,518 miles. Uranus is four times larger than Earth.", uranusHistory, uranusArt);
        planetsRepo.save(uranus);
        Planets neptune = new Planets("Neptune", "In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet.", "2.785 billion miles from the sun.", "Neptune has a diameter of 30,599 miles. Neptune is very similar in size to Uranus and is 3.9 times larger than Earth.", neptuneHistory, neptuneArt);

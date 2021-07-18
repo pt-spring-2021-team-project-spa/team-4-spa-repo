@@ -1,6 +1,9 @@
 package org.wecancodeit.mysteryeducator.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Objects;
 
 @Entity
@@ -13,10 +16,10 @@ public class Planets {
     private String description;
     private String distance;
     private String size;
-    @OneToOne
-    private History history;
-    @OneToOne
-    private Art art;
+    @ManyToMany
+    private Collection<History> history;
+    @ManyToMany
+    private Collection <Art> art;
 
 
     public Long getId() {
@@ -39,9 +42,9 @@ public class Planets {
         return size;
     }
 
-    public History getHistory() {return history;}
+    public Collection<History> getHistory() {return history;}
 
-    public Art getArt() {return art;}
+    public Collection <Art> getArt() {return art;}
 
 
     public Planets() {
@@ -53,21 +56,20 @@ public class Planets {
         this.description = description;
         this.distance = distance;
         this.size = size;
-        this.history = history;
-        this.art = art;
+        this.history = new ArrayList<>(Arrays.asList(history));
+        this.art = new ArrayList<>(Arrays.asList(art));
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Planets)) return false;
         Planets planets = (Planets) o;
-        return Objects.equals(id, planets.id) && Objects.equals(name, planets.name) && Objects.equals(description, planets.description) && Objects.equals(distance, planets.distance) && Objects.equals(size, planets.size);
+        return Objects.equals(getId(), planets.getId()) && Objects.equals(getName(), planets.getName()) && Objects.equals(getDescription(), planets.getDescription()) && Objects.equals(getDistance(), planets.getDistance()) && Objects.equals(getSize(), planets.getSize()) && Objects.equals(getHistory(), planets.getHistory()) && Objects.equals(getArt(), planets.getArt());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, distance, size);
+        return Objects.hash(getId(), getName(), getDescription(), getDistance(), getSize(), getHistory(), getArt());
     }
-
 }
