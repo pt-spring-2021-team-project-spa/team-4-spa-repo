@@ -53,7 +53,7 @@ function navPlanets() {
         const app = document.querySelector('#app');
         apiActions.getRequest('http://localhost:8080/api/planets/', (planets) => {
         console.log(planets);
-        app.innerHTML =Planets(planets);
+        app.innerHTML = Planets(planets);
           });
         });
       }

@@ -1,6 +1,6 @@
-export default function Planets() {
-    return `
-      <h1>Planets</h1>
-      
-      `;
-  }
+export default function Planets(planets) {
+  return `
+  <h1>Planets</h1>
+  
+  `
+}

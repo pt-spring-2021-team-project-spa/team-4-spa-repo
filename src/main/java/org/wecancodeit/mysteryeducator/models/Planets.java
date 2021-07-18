@@ -20,7 +20,7 @@ public class Planets {
     private Collection<History> history;
     @ManyToMany
     private Collection <Art> art;
-    
+
     public Long getId() {
         return id;
     }
