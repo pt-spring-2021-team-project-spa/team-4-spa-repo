@@ -53,7 +53,7 @@ public class Populator implements CommandLineRunner {
         artRepo.save(jupiterArt);
         Art uranusArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/460164/912801/main-image", "The story of Hercules: the gods called upon Hercules to help them defend Olympus against the attack of the Giants, sons of Uranus and Gaea (Heaven and Earth)");
         artRepo.save(uranusArt);
-        Art mercuryArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/380572/773414/main-image", "1 of 30 illustrations etched by Hollar for an edition of The Aeneid.\n" + "In a square in Carthage, Mercury approaching Aeneas from the air, warning him to leave the city; Ascanius and a middle-aged man standing by at right; stone mason working at centre foreground, workmen shovelling stones and carrying stone blocks at left, others working on buildings in background; statue of Diana in a niche at right; coat of arms below image at centre.");
+        Art mercuryArt = new Art("https://collectionapi.metmuseum.org/api/collection/v1/iiif/380572/773414/main-image", "1 of 30 illustrations etched by Hollar for an edition of The Aeneid." + "In a square in Carthage, Mercury approaching Aeneas from the air, warning him to leave the city; Ascanius and a middle-aged man standing by at right; stone mason working at centre foreground, workmen shovelling stones and carrying stone blocks at left, others working on buildings in background; statue of Diana in a niche at right; coat of arms below image at centre.");
         artRepo.save(mercuryArt);
 
 
