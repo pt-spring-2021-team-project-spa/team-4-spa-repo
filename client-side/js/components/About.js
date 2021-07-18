@@ -43,7 +43,7 @@ export default function About() {
         Alicia Bio.
       </p>
       <a href="#" class="button">AliciaSanders@SpaceKIDet.com</a>
-    </
+    </section>
     <div class="container">
       <h2>Zachary Tabler</h2>
       <h3>Flight Engineer</h3>
@@ -60,9 +60,8 @@ export default function About() {
     </div>
   </section>
   <section>
-    div>
+    </div>
   </section>
-  <section>
     <div class="container">
       <h2>Jovahnn Tucker</h2>
       <h3>Commander</h3>

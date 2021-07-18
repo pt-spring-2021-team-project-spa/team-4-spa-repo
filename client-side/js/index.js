@@ -16,6 +16,7 @@ function buildPage() {
   navAbout();
   navContact();
   StarWars();
+  Welcome();
 }
 
 function header() {
@@ -67,3 +68,4 @@ function navPlanets() {
               });
             });
           }
+    
