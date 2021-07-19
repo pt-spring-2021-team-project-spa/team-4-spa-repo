@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import Planets from "./components/Planets";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import apiActions from './api-actions/api-actions';
 
 buildPage();
 
@@ -14,6 +15,8 @@ function buildPage() {
   navPlanets();
   navAbout();
   navContact();
+  StarWars();
+  Welcome();
 }
 
 function header() {
@@ -30,12 +33,7 @@ function HomePage() {
     app.innerHTML = Home();
   });
 }
-function navPlanets() {
-  const planetsElem = document.querySelector(".nav-list__planets");
-  planetsElem.addEventListener("click", () => {
-    app.innerHTML = Planets();
-  });
-}
+
 function navAbout() {
   const aboutElem = document.querySelector(".nav-list__about");
   aboutElem.addEventListener("click", () => {
@@ -49,3 +47,24 @@ function navContact() {
     app.innerHTML = Contact();
   });
 }
+
+function navPlanets() {
+    const planetsElem = document.querySelector(".nav-list__planets");
+    planetsElem.addEventListener("click", () => {
+        const app = document.querySelector('#app');
+        apiActions.getRequest('http://localhost:8080/api/planets/', (planets) => {
+        console.log(planets);
+        app.innerHTML = Planets(planets);
+          });
+        });
+      }
+
+      function StarWars() {
+        const planetElem = document.querySelector(".nav-list__planets");
+        planetElem.addEventListener("click", () => {
+            const app = document.querySelector('#app');
+            apiActions.getRequest('https://swapi.dev/api/people', (luke) => {
+               console.log(luke)
+              });
+            });
+          }

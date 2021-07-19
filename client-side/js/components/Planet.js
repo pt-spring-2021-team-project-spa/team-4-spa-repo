@@ -1,10 +1,8 @@
-export default function Planets() {
+import Planets from '../components/Planets';
+
+export default function Planet(planets) {
     return `
-    <h1>Planets</h1>
-    <ul class="planets-list">
-    $(planets.map(planet => {
-        return `
-        <li class ="planets-list-name">${Planets.name}</li>
-        `
-        </ul>
+    <h1>Planet</h1>
+    ${Planets(planet)}
+    `;
 }
