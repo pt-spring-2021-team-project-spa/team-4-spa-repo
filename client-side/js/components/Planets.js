@@ -9,4 +9,4 @@ export default function Planets(planets) {
     }).join('')}
     </ul>
     `
-  }
+}

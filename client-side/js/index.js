@@ -5,6 +5,7 @@ import Planets from "./components/Planets";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import apiActions from './api-actions/api-actions';
+import PlanetsPage from './Pages/PlanetsPage'
 
 buildPage();
 
@@ -15,8 +16,8 @@ function buildPage() {
   navPlanets();
   navAbout();
   navContact();
-  StarWars();
-  Welcome();
+  renderNasaImages();
+  renderPlanetInfo();
 }
 
 function header() {
@@ -59,13 +60,47 @@ function navPlanets() {
         });
       }
 
+      var img = document.createElement("img");
+img.src = "/images/space-kids.jpg";
+var src = document.getElementById("#app");
+src.appendChild(img);
+
+
+
       function StarWars() {
         const planetElem = document.querySelector(".nav-list__planets");
         planetElem.addEventListener("click", () => {
             const app = document.querySelector('#app');
-            apiActions.getRequest('https://swapi.dev/api/people', (luke) => {
-               console.log(luke)
+            apiActions.getRequest('https://images-api.nasa.gov/search?q=saturn', (saturn) => {
+               console.log(saturn)
               });
             });
           }
-    
+
+          function renderPlanetInfo() {
+            const planetsPageElem = document.querySelector(".nav-list__planetsPage");
+            planetsPageElem.addEventListener('click', (event) => {
+              console.log("firing")
+              const app = document.querySelector('#app');
+              if (event.target.classList.contains('name')) {
+                const planetUrl =
+                  event.target.parentElement.querySelector('#id').value;
+                apiActions.getRequest(planetUrl, (planets) => {
+                  app.innerHTML = PlanetsPage(planets);
+                });
+              }
+            });
+
+            // function renderNasaImages() {
+            //   const nasaImagesButton = document.querySelector('.nav__list_planets');
+            //   nasaImagesButton.addEventListener('click', () => {
+            //     const app = document.querySelector('#app');
+            //     apiActions.getRequest(
+            //       'https://images-api.nasa.gov/search?q=saturn',
+            //       (images) => {
+            //         app.innerHTML = ImagesPage(images);
+            //       }
+            //     );
+            //   });
+            // }
+          }
