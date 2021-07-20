@@ -110,11 +110,10 @@ function renderPlanetInfo() {
 
           app.addEventListener('click', () =>{
             if (event.target.classList.contains('add-favorite-fact__submit')) {
-              console.log("firing")
               const favoriteFact = event.target.parentElement.querySelector('.add-favorite-fact').value;
               console.log(favoriteFact);
               apiActions.postRequest('http://localhost:8080/api/favoritefact/add', {
                   favoriteFact: favoriteFact
-              }, (planets) => app.innerHTML = Planets(planets));
+              }, (planet) => app.innerHTML = Planet(planet));
           }
       })
