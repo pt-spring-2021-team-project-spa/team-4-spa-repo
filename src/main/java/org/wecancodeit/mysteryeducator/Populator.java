@@ -6,6 +6,7 @@ import org.wecancodeit.mysteryeducator.models.Art;
 import org.wecancodeit.mysteryeducator.models.History;
 import org.wecancodeit.mysteryeducator.models.Planets;
 import org.wecancodeit.mysteryeducator.repositories.ArtRepository;
+import org.wecancodeit.mysteryeducator.repositories.FavoriteFactRepository;
 import org.wecancodeit.mysteryeducator.repositories.HistoryRepository;
 import org.wecancodeit.mysteryeducator.repositories.PlanetsRepository;
 
@@ -20,6 +21,8 @@ public class Populator implements CommandLineRunner {
     private HistoryRepository historyRepo;
     @Resource
     private ArtRepository artRepo;
+    @Resource
+    private FavoriteFactRepository favoriteFactRepo;
 
     @Override
     public void run(String... args) throws Exception {

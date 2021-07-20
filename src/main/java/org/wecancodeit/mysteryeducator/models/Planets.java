@@ -1,10 +1,7 @@
 package org.wecancodeit.mysteryeducator.models;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 public class Planets {
@@ -20,6 +17,8 @@ public class Planets {
     private Collection<History> history;
     @ManyToMany
     private Collection <Art> art;
+    @ManyToMany
+    private Set <FavoriteFact> favoriteFact;
 
     public Long getId() {
         return id;
@@ -45,6 +44,13 @@ public class Planets {
 
     public Collection <Art> getArt() {return art;}
 
+    public Collection<FavoriteFact> getFavoriteFact() {
+        return favoriteFact;
+    }
+
+    public void addFavoriteFact(FavoriteFact favoriteFactToAdd) {
+        favoriteFact.add(favoriteFactToAdd);
+    }
 
     public Planets() {
 
@@ -57,6 +63,7 @@ public class Planets {
         this.size = size;
         this.history = new ArrayList<>(Arrays.asList(history));
         this.art = new ArrayList<>(Arrays.asList(art));
+        this.favoriteFact = new HashSet<>();
     }
 
     @Override

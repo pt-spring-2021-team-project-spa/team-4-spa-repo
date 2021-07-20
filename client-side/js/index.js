@@ -7,6 +7,8 @@ import Planets from "./components/Planets";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import apiActions from './api-actions/api-actions';
+import Quiz from './components/Quiz';
+import FavoriteFact from './components/FavoriteFact'
 
 buildPage();
 
@@ -18,7 +20,9 @@ function buildPage() {
   navAbout();
   navContact();
   StarWars();
-  // Welcome();
+  quizPage();
+  navFacts();
+
 }
 
 function header() {
@@ -29,10 +33,18 @@ function footer() {
   const footerElem = document.querySelector(".footer");
   footerElem.innerHTML = Footer();
 }
+
 function HomePage() {
   const homeElem = document.querySelector(".nav-list__home");
   homeElem.addEventListener("click", () => {
     app.innerHTML = Home();
+  });
+}
+
+function quizPage() {
+  const quizElem = document.querySelector(".nav-list__quiz");
+  quizElem.addEventListener("click", () => {
+    app.innerHTML = Quiz();
   });
 }
 
@@ -62,6 +74,18 @@ function navPlanets() {
         });
       }
 
+
+      function navFacts() {
+        const factsElem = document.querySelector(".nav-list__favorite");
+        factsElem.addEventListener("click", () => {
+            const app = document.querySelector('#app');
+            apiActions.getRequest('http://localhost:8080/api/favoritefact/', (favorite) => {
+            console.log(favorite);
+            app.innerHTML = FavoriteFact(favorite);
+              });
+            });
+          }
+
 function renderPlanetInfo() {
   app.addEventListener('click', () => {
     if (event.target.classList.contains('planets-list__name')) {
@@ -73,6 +97,7 @@ function renderPlanetInfo() {
   })
 }
 
+
       function StarWars() {
         const planetElem = document.querySelector(".nav-list__planets");
         planetElem.addEventListener("click", () => {
@@ -82,3 +107,14 @@ function renderPlanetInfo() {
               });
             });
           }
+
+          app.addEventListener('click', () =>{
+            if (event.target.classList.contains('add-favorite-fact__submit')) {
+              console.log("firing")
+              const favoriteFact = event.target.parentElement.querySelector('.add-favorite-fact').value;
+              console.log(favoriteFact);
+              apiActions.postRequest('http://localhost:8080/api/favoritefact/add', {
+                  favoriteFact: favoriteFact
+              }, (planets) => app.innerHTML = Planets(planets));
+          }
+      })
