@@ -4,7 +4,9 @@ export default function Planets(planets) {
     <ul class='planets-list'>
     ${planets.map(planet => {
         return `
-        <li class='planets-list__name'>${planet.name}</li>
+        <li class ='planets-list__name'>${planet.name}
+        <input type='hidden' id='planetId' value='${planet.id}'>
+        </li>
         `
     }).join('')}
     </ul>
