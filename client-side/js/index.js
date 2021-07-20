@@ -1,6 +1,8 @@
+import crud from "./crud/crud.js"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Planet from "./components/Planet";
 import Planets from "./components/Planets";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -20,6 +22,7 @@ function buildPage() {
   StarWars();
   quizPage();
   navFacts();
+
 }
 
 function header() {
@@ -63,12 +66,14 @@ function navPlanets() {
     const planetsElem = document.querySelector(".nav-list__planets");
     planetsElem.addEventListener("click", () => {
         const app = document.querySelector('#app');
-        apiActions.getRequest('http://localhost:8080/api/planets/', (planets) => {
-        console.log(planets);
+        apiActions.getRequest('http://localhost:8080/api/planets/', planets => {
+        // console.log(planets);
         app.innerHTML = Planets(planets);
           });
+          renderPlanetInfo();
         });
       }
+
 
       function navFacts() {
         const factsElem = document.querySelector(".nav-list__favorite");
@@ -80,6 +85,18 @@ function navPlanets() {
               });
             });
           }
+
+function renderPlanetInfo() {
+  app.addEventListener('click', () => {
+    if (event.target.classList.contains('planets-list__name')) {
+      const planetId = event.target.querySelector('#planetId').value;
+      apiActions.getRequest(`http://localhost:8080/api/planets/${planetId}`, planet => {
+        app.innerHTML = Planet(planet);
+      })
+    }
+  })
+}
+
 
       function StarWars() {
         const planetElem = document.querySelector(".nav-list__planets");

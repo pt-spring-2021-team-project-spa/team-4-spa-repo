@@ -1,4 +1,4 @@
-import earthImg from "../../images/earth-photo.jpg";
+// import earthImg from "../../images/earth-photo.jpg";
 export default function Home() {
   return `
   <h1 class="main-title">JacKr Enterprises</h1>

@@ -27,6 +27,7 @@ public class PlanetsRestController {
     }
 
     @GetMapping("/api/planets/{id}")
+
     public Optional<Planets> getPlanets(@PathVariable Long id) {
         return planetsRepo.findById(id);
     }
