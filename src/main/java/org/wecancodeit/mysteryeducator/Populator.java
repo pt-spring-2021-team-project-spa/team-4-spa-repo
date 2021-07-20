@@ -22,7 +22,7 @@ public class Populator implements CommandLineRunner {
     @Resource
     private ArtRepository artRepo;
     @Resource
-    private FavoriteFactRepository favoriteFactRepo; 
+    private FavoriteFactRepository favoriteFactRepo;
 
     @Override
     public void run(String... args) throws Exception {

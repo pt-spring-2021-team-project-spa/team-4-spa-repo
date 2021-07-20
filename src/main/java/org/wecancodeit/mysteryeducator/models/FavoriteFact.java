@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class FavoriteFact {
 
     public FavoriteFact(String favoriteFact) {
         this.favoriteFact = favoriteFact;
-        planets = new ArrayList<>();
+        this.planets = new ArrayList(Arrays.asList(planets));
     }
 
     public Long getId() {

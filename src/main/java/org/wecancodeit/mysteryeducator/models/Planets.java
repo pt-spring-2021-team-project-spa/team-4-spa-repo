@@ -56,7 +56,7 @@ public class Planets {
 
     }
 
-    public Planets(String name, String description, String distance, String size, History history, Art art, FavoriteFact...favoriteFacts) {
+    public Planets(String name, String description, String distance, String size, History history, Art art) {
         this.name = name;
         this.description = description;
         this.distance = distance;

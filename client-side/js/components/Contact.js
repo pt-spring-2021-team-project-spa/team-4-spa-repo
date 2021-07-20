@@ -1,4 +1,5 @@
-export default function Contact() {return `
+export default function Contact() {
+    return `
 <h1>Contact</h1> 
 `;
 }
