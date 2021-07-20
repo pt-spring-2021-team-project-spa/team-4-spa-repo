@@ -5,6 +5,6 @@ import org.wecancodeit.mysteryeducator.models.FavoriteFact;
 
 import java.util.Optional;
 
-public interface FavoriteFactRepository extends CrudRepository<FavoriteFact, String> {
+public interface FavoriteFactRepository extends CrudRepository<FavoriteFact, Long> {
     Optional<FavoriteFact> findByFavoriteFact(String favoriteFact);
 }
