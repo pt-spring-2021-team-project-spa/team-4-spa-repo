@@ -10,10 +10,5 @@ export default function Planets(planets) {
         `
     }).join('')}
     </ul>
-
-    <section class='favorite-fact'>
-        <input class='add-favorite-fact' type='text' placeholder='Add a Favorite Fact to Save' />
-        <button class='add-favorite-fact__submit'>Save</button>
-    </section>
     `
   }
