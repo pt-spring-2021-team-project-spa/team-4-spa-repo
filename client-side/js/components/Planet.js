@@ -26,6 +26,16 @@ export default function Planet(planet) {
         }).join('')}
         </div>
 
+        <div class="art">
+            ${planet.art.map(art => {
+                return `
+                    <h2>
+                        Artwork Bio: <span>${art.artworkBio}</span>
+                    </h2>
+                `
+            }).join('')}
+        </div>
+
         <section class='favorite-fact'>
         <input class='add-favorite-fact' type='text' placeholder='Notes' />
         <button class='add-favorite-fact__submit'>Save</button>
