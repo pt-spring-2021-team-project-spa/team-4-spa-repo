@@ -7,7 +7,7 @@
 }
 
 .nav-list li:hover {
-  background-color: lightblue;
+  background-color: lightblue; 
   color: #888;
   transition: 0.5s;
 }
@@ -134,7 +134,7 @@
 .footer {
   color: white;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 25%;
 }
 
 #app {

@@ -1,0 +1,179 @@
+/*CSS STYLING FOR PLANETS PAGE */
+
+.planets-list{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    grid-row-gap: 20%;
+}
+
+.planets-pic-space{
+    background-image: url("/images/solar-system-439046_1920.jpg");
+    background-size: contain;
+    margin-top: 5%;
+}
+
+.planets-title{
+    text-align: center;
+    font-size: 4em; 
+    margin-bottom: 5%;
+}
+
+.planets-title:hover{
+    animation-name: wiggle;
+  -webkit-animation-name: wiggle;
+  -ms-animation-name: wiggle;
+  animation-duration: 1000ms;
+  -ms-animation-duration: 1000ms;
+  -webkit-animation-duration: 1000ms;
+  animation-iteration-count: 1;
+  -webkit-animation-iteration-count: 1;
+  -ms-animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  -ms-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes wiggle {
+    0% {-webkit-transform: rotate(10deg);}
+    25% {-webkit-transform: rotate(-10deg);}
+    50% {-webkit-transform: rotate(20deg);}
+    75% {-webkit-transform: rotate(-5deg);}
+    100% {-webkit-transform: rotate(0deg);}
+  }
+  
+  @-ms-keyframes wiggle {
+    0% {-ms-transform: rotate(1deg);}
+    25% {-ms-transform: rotate(-1deg);}
+    50% {-ms-transform: rotate(1.5deg);}
+    75% {-ms-transform: rotate(-5deg);}
+    100% {-ms-transform: rotate(0deg);}
+  }
+  
+  @keyframes wiggle {
+    0% {transform: rotate(10deg);}
+    25% {transform: rotate(-10deg);}
+    50% {transform: rotate(20deg);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+  }
+
+.planets-list__name{
+    background-image: url("/images/universe-2742113_1920.jpg");
+    background-repeat: no-repeat;
+    position:relative;
+    width: 250px;
+    padding: 40px;
+    font-size: 25px;
+    color:#15f4ee;
+    border: 5px solid #15f4ee;
+    cursor:pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+}
+
+.planets-list__name:hover{
+    box-shadow: 0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee,
+    0 5px 50px 0 #15f4ee inset, 0 5px 50px 0 #15f4ee;
+    text-shadow: 0 0 5px #15f4ee, 0 0 5px #15f4ee;
+}
+
+/*CSS STYLING FOR SINGLE PLANET INFO PAGE */
+
+.planet-name{
+    text-align: center;
+    font-size: 6em; 
+    margin-top: 8%;
+    margin-bottom: 3%;
+    margin-left: 60%;
+    color: transparent;
+    animation: effect 2s linear infinite;
+    
+}
+
+.planet-name-div{
+    transform: translate(-50%, -50%);
+}
+
+@keyframes effect {
+    0% {
+        background: linear-gradient(
+                #c5b4ce, #6f05ac);
+        -webkit-background-clip: text;
+    }
+
+    100% {
+        background: linear-gradient(
+                #3CE7D7, #000FFF);
+        -webkit-background-clip: text;
+    }
+}
+
+
+.planet-info-container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+}
+
+.planet-info-div{
+    background-image: url("/images/galaxy-3219390_1280.jpg");
+    align-items: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    margin-bottom: 5%;
+    padding: 3%;  
+    border: solid 5px #6e0457;
+    border-radius: 4px;
+}
+
+/*STYLING FOR SUBMIT BOX AND BUTTON */
+
+.add-favorite-fact__submit{
+    width: 100px;
+    height: 50px;
+    border: none;
+    color:white;
+    background-color: rgb(102, 18, 105);
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 0 #15f4ee;
+    transition: ease-out 0.5s;
+    outline: none;
+}
+
+.add-favorite-fact__submit:hover{
+    box-shadow: inset 100px 0 0 0 #3615c7;;
+}
+
+.add-favorite-fact{
+    outline:4px rgb(144, 21, 138) solid;
+    border:4px solid rgb(144, 21, 138);
+    outline-offset: -4px;
+    transition: outline-offset 350ms ease;
+    width: 200px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.add-favorite-fact:hover,
+.add-favorite-fact:focus{
+    outline-offset: 4px;
+}
+
+.favorite-fact{
+    text-align: center;
+    margin-top: 10%;
+    
+}
+
+
+
+
+
+
+
+
+
+
+

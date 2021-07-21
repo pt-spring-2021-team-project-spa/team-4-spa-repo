@@ -1,6 +1,7 @@
 export default function Planets(planets) {
   return `
-    <h1>Planets</h1>
+  <p class="planets-pic-space">  *</p>
+    <h1 class="planets-title">Planets</h1>
     <div class='planets-list'>
     ${planets.map(planet => {
         return `
