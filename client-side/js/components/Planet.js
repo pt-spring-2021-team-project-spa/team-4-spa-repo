@@ -49,6 +49,18 @@ export default function Planet(planet) {
         </div>
         </div>
 
+        <div class="planet-info-div">
+            ${planet.art.map(art => {
+                return `
+                    <h2>Artwork Bio: </h2>
+                    <p class="planet-bio"
+                    <span>${art.artworkBio}</span>
+                    </p>
+        </div>
+                `
+            }).join('')}
+        </div>
+
         <section class='favorite-fact'>
         <h1>Have a favorite fact or just want to take some notes?</h1>
         <h1>Just enter them here and then click on the favorite facts tab.</h1>
