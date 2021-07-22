@@ -19,7 +19,6 @@ function buildPage() {
   navPlanets();
   navAbout();
   navContact();
-  StarWars();
   quizPage();
   navFacts();
 
@@ -37,6 +36,7 @@ function footer() {
 function HomePage() {
   const homeElem = document.querySelector(".nav-list__home");
   homeElem.addEventListener("click", () => {
+    const app = document.querySelector("#app");
     app.innerHTML = Home();
   });
 }
@@ -96,17 +96,6 @@ function renderPlanetInfo() {
     }
   })
 }
-
-
-      function StarWars() {
-        const planetElem = document.querySelector(".nav-list__planets");
-        planetElem.addEventListener("click", () => {
-            const app = document.querySelector('#app');
-            apiActions.getRequest('https://swapi.dev/api/people', (luke) => {
-               console.log(luke)
-              });
-            });
-          }
 
           app.addEventListener('click', () =>{
             if (event.target.classList.contains('add-favorite-fact__submit')) {
