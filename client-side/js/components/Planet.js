@@ -13,6 +13,9 @@ export default function Planet(planet) {
         <h1 class="planet-name">${planet.name}</h1>
         </div>
 
+        <div>
+        <center><img src = ${planet.planetImage}></center>
+        </div>
         <div class="planet-info-container">
 
         <div class="planet-info-div">
