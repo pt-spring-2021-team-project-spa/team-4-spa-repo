@@ -50,8 +50,8 @@ export default function Planet(planet) {
         </div>
 
         <section class='favorite-fact'>
-        <h1>Have a favorite fact or just want to take some notes?</h1>
-        <h1>Just enter them here and then click on the favorite facts tab.</h1>
+        <h1 class="submit-fact-directions">Have a favorite fact or just want to take some notes?</h1>
+        <h1 class="submit-fact-directions">Just enter them here and then click on the favorite facts tab.</h1>
         <input class='add-favorite-fact' type='text' placeholder='Notes' />
         <button class='add-favorite-fact__submit'>Save</button>
         </section>

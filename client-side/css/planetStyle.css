@@ -164,16 +164,54 @@
 .favorite-fact{
     text-align: center;
     margin-top: 10%;
-    
 }
 
+/*STYLING FOR FAVORITE FACTS PAGE */
 
+.favorite-facts-list__name{
+    font-size: 2em;
+    margin-left: 15%;
+    margin-top: 2%;
+}
 
+.submit-fact-directions{
+    text-align: center;
+    font-size: 2em;
+}
 
+.favorite-facts{
+    text-align: center;
+    font-size: 5em;
+    margin-left: 50%;
+    margin-top: 10%;
 
+    color: transparent;
+    animation: effect 2s linear infinite;
+}
 
+.favorite-facts-title-div{
+    transform: translate(-50%, -50%);
+}
 
+@keyframes effect {
+    0% {
+        background: linear-gradient(
+                #c5b4ce, #6f05ac);
+        -webkit-background-clip: text;
+    }
 
+    100% {
+        background: linear-gradient(
+                #3CE7D7, #000FFF);
+        -webkit-background-clip: text;
+    }
+}
 
+/*CONTACT US PAGE STYLING */
+
+.contact-title{
+    text-align: center;
+    font-size: 4em;
+}
 
 

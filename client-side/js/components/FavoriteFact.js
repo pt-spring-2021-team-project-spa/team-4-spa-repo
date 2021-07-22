@@ -1,6 +1,9 @@
 export default function FavoriteFact(favorite) {
     return `
-    <h1>Favorite Facts</h1>
+    <div class="favorite-facts-div">
+    <div class="favorite-facts-title-div">
+    <h1 class='favorite-facts'>Favorite Facts</h1>
+    </div>
     <ul class='favorite-facts-list'>
     ${favorite.map(favorite => {
         return `
@@ -8,5 +11,6 @@ export default function FavoriteFact(favorite) {
         `
     }).join('')}
     </ul>
+    </div>
     `
 }
