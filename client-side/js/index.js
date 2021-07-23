@@ -1,4 +1,3 @@
-import crud from "./crud/crud.js"
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -31,6 +30,7 @@ function header() {
   const headerElem = document.querySelector(".header");
   headerElem.innerHTML = Header();
 }
+
 function footer() {
   const footerElem = document.querySelector(".footer");
   footerElem.innerHTML = Footer();
