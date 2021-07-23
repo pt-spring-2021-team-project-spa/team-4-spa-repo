@@ -1,6 +1,6 @@
 export default function Quiz() {
     return `
-    <H1>KIDet Quiz</H1>
+    <h1 class="quiz-name">KIDet Quiz</h1>
     <div class="planets_quiz">
     <h3>Question 1: Which planet is known as "The Blue Planet?"?</h3>
     <input type="radio" name="question1">Earth<br>

@@ -118,7 +118,7 @@ function renderSmithsonianArt() {
   smithsonianButton.addEventListener('click', () => {
     const app = document.querySelector('#app');
     apiActions.getRequest(
-      'https://api.si.edu/openaccess/api/v1.0/content/edanmdm-siris_sil_154895?api_key=0ZxJcOQ0dSdHl9hWed4OfuXt19KJhcgTXpJcUpLr',
+      'https://api.si.edu/openaccess/api/v1.0/content/edanmdm-siris_sil_283188?api_key=0ZxJcOQ0dSdHl9hWed4OfuXt19KJhcgTXpJcUpLr',
       (info) => {
         app.innerHTML = SmithsonianArt(info);
       }
