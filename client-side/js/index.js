@@ -21,7 +21,6 @@ function buildPage() {
   navPlanets();
   navAbout();
   navContact();
-  StarWars();
   quizPage();
   navFacts();
   renderNasaPhotos()
@@ -40,6 +39,7 @@ function footer() {
 function HomePage() {
   const homeElem = document.querySelector(".nav-list__home");
   homeElem.addEventListener("click", () => {
+    const app = document.querySelector("#app");
     app.innerHTML = Home();
   });
 }

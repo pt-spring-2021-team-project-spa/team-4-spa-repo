@@ -1,14 +1,19 @@
+.space-kids {
+  height: 50%;
+  width: 75%;
+}
+
 .nav-list li {
-  background-color: blue;
-  border-radius: 10px;
+  background-image: linear-gradient(to right top, #8e44ad 0%, #3498db 100%);
+  border-radius: 80px;
   color: #fff;
   list-style-type: none;
   padding: 1rem;
 }
 
 .nav-list li:hover {
-  background-color: lightblue; 
-  color: #888;
+  background-color: lightblue;
+  color: rgb(89, 231, 89);
   transition: 0.5s;
 }
 .nav-list {
@@ -45,7 +50,6 @@
 }
 
 .nav-bar {
-  background-color: rgb(79, 223, 122);
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   overflow: hidden;
@@ -55,59 +59,6 @@
   font-size: 18px;
   padding: 16px 40px;
 }
-
-.learning-dropdown-menu {
-  float: left;
-  overflow: hidden;
-}
-
-.learning-dropdown-menu .learning-button,
-.about-us-btn,
-.contact-btn,
-.planet-science-button,
-.art-button,
-.history-button {
-  background-color: inherit;
-  border: none;
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-  outline: none;
-  padding: 14px 90px;
-}
-
-.nav-bar a:hover,
-.learning-dropdown-menu:hover,
-.learning-button:hover,
-.about-us-btn:hover,
-.contact-btn:hover,
-.planet-science-button:hover,
-.history-button:hover,
-.art-button:hover {
-  background-color: rgb(32, 97, 218);
-  color: white;
-}
-
-.planet-learning-content {
-  background-color: rgb(79, 223, 122);
-  display: none;
-  min-width: 160px;
-  position: absolute;
-  z-index: 1;
-}
-
-.planet-learning-content a {
-  display: block;
-  float: none;
-  padding: 14px 28px;
-  text-align: left;
-}
-
-.learning-dropdown-menu:hover .planet-learning-content {
-  display: block;
-}
-
 .space-kids {
   border-radius: 8px;
   display: block;
@@ -126,11 +77,6 @@
   width: 80%;
 }
 
-.planet-science-section {
-  display: none;
-  height: 100%;
-}
-
 .footer {
   color: white;
   text-align: center;
@@ -138,6 +84,7 @@
 }
 
 #app {
+  
   color:white;
 }
 
@@ -147,3 +94,7 @@
   grid-template-columns: 1fr 1fr;
   padding: 50px;
 }
+
+  color: white;
+}
+
