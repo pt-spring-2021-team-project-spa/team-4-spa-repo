@@ -1,8 +1,9 @@
 export default function Quiz() {
     return `
-    <h1 class="quiz-name">KIDet Quiz</h1>
+    <center><h1 class="quiz-name">KIDet Quiz</h1></center>
     <div class="planets_quiz">
-    <h3>Question 1: Which planet is known as "The Blue Planet?"?</h3>
+    
+    <h3>Question 1: Which planet is known as "The Blue Planet?"</h3>
     <input type="radio" name="question1">Earth<br>
     <input type="radio" name="question1" >Jupiter<br>
     <input type="radio" name="question1" id="correct1">Neptune<br>
@@ -26,18 +27,17 @@ export default function Quiz() {
     <input type="radio" name="question4" >Earth & Mars<br>
     <input type="radio" name="question4" >Jupiter & Saturn<br>
     
-    <h3>Question 5: Which Planet is named after Roman god of shopkeepers, merchants, travelers, transporters of goods, thieves, and tricksters. ?</h3>
+    <h3>Question 5: Which Planet is named after Roman god of shopkeepers, merchants, travelers, transporters of goods, thieves, and tricksters?</h3>
     <input type="radio" name="question5" id="correct5">Mercury<br>
     <input type="radio" name="question5" >Saturn<br>
     <input type="radio" name="question5" >Venus<br>
     <input type="radio" name="question5" >Neptune<br>
-    
-    <div class="submit_results">
-    
+    </div>
+    <br>
+    <div class="submit_quiz">
     <input class="submit_Btn" type="submit" name="submit" value="Submit Quiz" id="result">
-    
     <h1 class="number_right" id="number_correct"></h1>
     </div>
-    </div>
+    
     `;
 }
