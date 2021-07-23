@@ -11,7 +11,7 @@ export default function NasaPhotos(images) {
           console.log(item.links);
           const itemImage = item.links[0].href;
           return `
-            <img src=${itemImage} alt='' />
+            <img class="nasa-api-img" src=${itemImage} alt='' />
             `;
         })
         .join('')}
