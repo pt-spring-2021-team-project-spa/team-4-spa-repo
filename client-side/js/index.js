@@ -23,6 +23,7 @@ function buildPage() {
   navContact();
   quizPage();
   navFacts();
+  kidetQuiz();
   renderNasaPhotos()
   renderSmithsonianArt()
 }
@@ -144,3 +145,46 @@ function renderSmithsonianArt() {
               }, (planet) => app.innerHTML = Planet(planet));
           }
       })
+
+      function kidetQuiz() {
+        const app = document.querySelector("#app");
+        app.addEventListener("click", (event) => {
+          if (event.target.classList.contains("submit_Btn")) {
+            var score = 0;
+            if (document.getElementById("correct1").checked) {
+              score++;
+            }
+            if (document.getElementById("correct2").checked) {
+              score++;
+            }
+            if (document.getElementById("correct3").checked) {
+              score++;
+            }
+            if (document.getElementById("correct4").checked) {
+              score++;
+            }
+            if (document.getElementById("correct5").checked) {
+              score++;
+          } 
+        if (score == 0) {
+            number_correct.textContent =
+              "Oh no! You didn't answer any questions correctly. Please proceed to Space Camp.";
+          } else if (score == 1) {
+              number_correct.textContent =
+                "Keep studying! You only answered 1 question right this round. Please spend a little more time in the app and come back!";
+          } else if (score == 2) {
+            number_correct.textContent =
+              "You answered 2 questions correctly. We think you need to spend a little more time at Mission Control but I'm sure you'll be a Space KIDet soon!";
+          } else if (score == 3) {
+              number_correct.textContent =
+                "Good job! You correctly answered 3 questions! If you spend just a little more time in the app, you'll be ready for BLAST OFF!!!";
+            } else if (score == 4) {
+              number_correct.textContent =
+                "WOW! Great job! You answered 4 questions correctly! We'd like to offer you a spot in the Space KIDets!";
+              } else {
+                number_correct.textContent =
+                  "PERFECT SCORE! Congratulations! You answered all 5 questions correctly! We'd love to have you join the Space KIDets team!";
+            }
+          }
+        });
+      }
