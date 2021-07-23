@@ -140,3 +140,10 @@
 #app {
   color:white;
 }
+
+.grid-container {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: 1fr 1fr;
+  padding: 50px;
+}
