@@ -12,6 +12,8 @@ public class Planets {
     @Lob
     private String planetImage;
     @Lob
+    private String artImage;
+    @Lob
     private String description;
     private String distance;
     private String size;
@@ -31,6 +33,8 @@ public class Planets {
     }
 
     public String getPlanetImage() {return planetImage;}
+
+    public String getArtImage() {return artImage;}
 
     public String getDescription() {
         return description;
@@ -60,9 +64,10 @@ public class Planets {
 
     }
 
-    public Planets(String name, String planetImage, String description, String distance, String size, History history, Art art) {
+    public Planets(String name, String planetImage, String artImage, String description, String distance, String size, History history, Art art) {
         this.name = name;
         this.planetImage = planetImage;
+        this.artImage = artImage;
         this.description = description;
         this.distance = distance;
         this.size = size;

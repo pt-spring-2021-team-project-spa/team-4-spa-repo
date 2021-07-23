@@ -34,31 +34,15 @@ export default function Planet(planet) {
         </div>
         <div>
         <div class="planet-info-div">
-        ${planet.history.map(history => {
-            return `
-                <h2>Bio:</h2>
-                <p class="planet-bio">
-                     <span>${history.bio}</span>
-                </p>
-                </div>
-                <div class="planet-info-div">
-                <h2>Synopsis:</h2>
-                <p class"planet-history">
-                     <span>${history.synopsis}</span>
-                </p>
-                </div>
-                    `
-        }).join('')}
-        </div>
-        </div>
-
-        <div class="planet-info-div">
             ${planet.art.map(art => {
                 return `
                     <div class='art-photo-section'>
-                        <div class='planet-art__${planet.name}'>${planet.name} Art
+                        <div class='planet-art__${planet.name}'>
                             <input type='hidden' id='planetId' value='${planet.id}'>
                         </div>
+                        <div>
+                <center><img src = ${planet.artImage}></center>
+                </div>
                         <img class='planet-art-img'></img>
                     </div>
                     <h2>Artwork Bio: </h2>
@@ -69,6 +53,27 @@ export default function Planet(planet) {
                 `
             }).join('')}
         </div>
+
+        <div class="planet-info-div">
+        ${planet.history.map(history => {
+            return `
+                <h2>History:</h2></h2>:</h2>
+                <p class="planet-bio">
+                     <span>${history.bio}</span>
+                </p>
+                </div>
+                <div class="planet-info-div">
+                <h2>Nomenclature:</h2>
+                <p class"planet-history">
+                     <span>${history.synopsis}</span>
+                </p>
+                </div>
+                    `
+        }).join('')}
+        </div>
+        </div>
+
+        
 
 
 
