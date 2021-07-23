@@ -1,8 +1,9 @@
+import ContactUs from "../../css/assets/contactUsStyle.css";
 export default function Contact() {
     return `
 
 <title>JacKr Enterprises</title>
-<body>
+<body1>
     <!-- Header Showcase-->
     <header id="showcase" class="grid">
         <div class="bg-image"></div>
@@ -30,7 +31,7 @@ export default function Contact() {
             <ul>
                 <li>
                     <div class="card">
-                        <img src="https://i.ibb.co/bzjcMW3/redsea-1-1024x768.jpg" alt="">
+                        <img1 src="https://i.ibb.co/bzjcMW3/redsea-1-1024x768.jpg" alt="">
                         <div class="card-content">
                             <h3 class="card-title">EYA!&#8482</h3>
                             <p>Own an aquarium?  Enjoy visiting major aquariums? Love to visit the tropical fish store?  This adventure is all 3 of those questions...<strong>LIVE AND IN LIVING COLOR!</strong> So come Enjoy Your Aquarium!...EYA!&#8482</p>
@@ -39,7 +40,7 @@ export default function Contact() {
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://i.ibb.co/T4qtfvC/cavern.jpg" alt="" srcset="">
+                        <img1 src="https://i.ibb.co/T4qtfvC/cavern.jpg" alt="" srcset="">
                         <div class="card-content">
                             <h3 class="card-title">Spelunking!&#8482</h3>
                             <p>Sure.  The tourist caves are beautiful, fun, and unique to visit.  But why do the tourist thing when you can tame the wilds and mark new paths for future tourists to follow.</p>
@@ -48,7 +49,7 @@ export default function Contact() {
                 </li>
                 <li>
                     <div class="card">
-                        <img src="https://i.ibb.co/CQ83Jnh/trek-to-k2-2.jpg" alt="" srcset="">
+                        <img1 src="https://i.ibb.co/CQ83Jnh/trek-to-k2-2.jpg" alt="" srcset="">
                         <div class="card-content">
                             <h3 class="card-title">JT,B!&#8482</h3>
                             <p>"Just Trek Baby!&#8482" is what we say here at JacKr.  Come test your fortitude with treks that make you forget that the word civilization even exists. </p>
@@ -86,6 +87,6 @@ export default function Contact() {
         <div>JacKr Enterprises</div>
         <div>Web Site Created By <a href="http://wecancodeit.org" target="_blank">We Can Code IT</a></div>
     </footer>
-</body>
+</body1>
 `;
 }
