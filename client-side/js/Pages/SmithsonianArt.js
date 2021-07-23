@@ -5,6 +5,8 @@ export default function SmithsonianPage(info) {
     return `
       <h1>Available Book From Smithsonian Library:</h1>
 
+      <img src="https://i.ibb.co/XpsrKK6/The-Beauty-of-Heavens.jpg"/>
+
       <h2>Book Title</h2>
       ${info.response.title};
 
