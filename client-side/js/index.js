@@ -9,6 +9,8 @@ import Contact from "./components/Contact";
 import apiActions from './api-actions/api-actions';
 import Quiz from './components/Quiz';
 import FavoriteFact from './components/FavoriteFact'
+import NasaPhotos from './Pages/NasaPhotos';
+import SmithsonianArt from './Pages/SmithsonianArt'
 
 buildPage();
 
@@ -21,7 +23,8 @@ function buildPage() {
   navContact();
   quizPage();
   navFacts();
-
+  renderNasaPhotos()
+  renderSmithsonianArt()
 }
 
 function header() {
@@ -54,6 +57,7 @@ function navAbout() {
     app.innerHTML = About();
   });
 }
+
 function navContact() {
   const contactElem = document.querySelector(".nav-list__contact");
   contactElem.addEventListener("click", () => {
@@ -73,7 +77,6 @@ function navPlanets() {
           renderPlanetInfo();
         });
       }
-
 
       function navFacts() {
         const factsElem = document.querySelector(".nav-list__favorite");
@@ -97,6 +100,41 @@ function renderPlanetInfo() {
   })
 }
 
+function renderNasaPhotos() {
+  const nasaPhotosButton = document.querySelector('.nav-list__nasa-api-photos');
+  nasaPhotosButton.addEventListener('click', () => {
+    const app = document.querySelector('#app');
+    apiActions.getRequest(
+      'https://images-api.nasa.gov/search?q=planets', (photos) => {
+        app.innerHTML = NasaPhotos(photos);
+      }
+    );
+  });
+}
+
+function renderSmithsonianArt() {
+  const smithsonianButton = document.querySelector('.nav-list__smithsonian-api');
+  smithsonianButton.addEventListener('click', () => {
+    const app = document.querySelector('#app');
+    apiActions.getRequest(
+      'https://api.si.edu/openaccess/api/v1.0/content/edanmdm-siris_sil_154895?api_key=0ZxJcOQ0dSdHl9hWed4OfuXt19KJhcgTXpJcUpLr',
+      (info) => {
+        app.innerHTML = SmithsonianArt(info);
+      }
+    );
+  });
+}
+
+      function StarWars() {
+        const planetElem = document.querySelector(".nav-list__planets");
+        planetElem.addEventListener("click", () => {
+            const app = document.querySelector('#app');
+            apiActions.getRequest('https://swapi.dev/api/people', (luke) => {
+               console.log(luke)
+              });
+            });
+          }
+          
           app.addEventListener('click', () =>{
             if (event.target.classList.contains('add-favorite-fact__submit')) {
               const favoriteFact = event.target.parentElement.querySelector('.add-favorite-fact').value;

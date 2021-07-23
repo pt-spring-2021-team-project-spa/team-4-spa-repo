@@ -52,6 +52,26 @@ export default function Planet(planet) {
         </div>
         </div>
 
+        <div class="planet-info-div">
+            ${planet.art.map(art => {
+                return `
+                    <div class='art-photo-section'>
+                        <div class='planet-art__${planet.name}'>${planet.name} Art
+                            <input type='hidden' id='planetId' value='${planet.id}'>
+                        </div>
+                        <img class='planet-art-img'></img>
+                    </div>
+                    <h2>Artwork Bio: </h2>
+                    <p class="planet-bio"
+                    <span>${art.artworkBio}</span>
+                    </p>
+        </div>
+                `
+            }).join('')}
+        </div>
+
+
+
         <section class='favorite-fact'>
         <h1 class="submit-fact-directions">Have a favorite fact or just want to take some notes?</h1>
         <h1 class="submit-fact-directions">Just enter them here and then click on the favorite facts tab.</h1>
