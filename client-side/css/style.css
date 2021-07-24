@@ -98,3 +98,147 @@
 .nasa-api-img {
   width: 30%;
 }
+
+.planet-description-title {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-description {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-distance-title {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-distance {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-size-title {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-size {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.art-bio {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-bio {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.history-title-class {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.history-bio-title {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-history {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.planet-history-title {
+  font-family: monospace;
+  font-size: x-large;
+}
+
+.smithsonian-title {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.book-title {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.book-title-info {
+  font-family: monospace;
+  font-size: large;
+}
+
+.author-title {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.author-name {
+  font-family: monospace;
+  font-size: large;
+}
+
+.book-topic-title {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.book-topic-info {
+  font-family: monospace;
+  font-size: large;
+}
+
+.language-title {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.language-info {
+  font-family: monospace;
+  font-size: large;
+}
+
+.quiz-name {
+  font-family: monospace;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.question {
+  font-family: monospace;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.question-container-one {
+  background-color: purple;
+  border-radius: 8px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.question-container-two {
+  background-color: blue;
+  border-radius: 8px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.question-container-three {
+  background-color: green;
+  border-radius: 8px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
