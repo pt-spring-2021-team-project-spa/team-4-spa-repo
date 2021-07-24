@@ -45,7 +45,7 @@ export default function Planet(planet) {
                 </div>
                         <img class='planet-art-img'></img>
                     </div>
-                    <h2>Artwork Bio: </h2>
+                    <h2 class="art-bio">Artwork Bio: </h2>
                     <p class="planet-bio"
                     <span>${art.artworkBio}</span>
                     </p>
@@ -57,14 +57,14 @@ export default function Planet(planet) {
         <div class="planet-info-div">
         ${planet.history.map(history => {
             return `
-                <h2>History:</h2></h2>:</h2>
+                <h2 class="history-title-class">History:</h2></h2>:</h2>
                 <p class="planet-bio">
                      <span>${history.bio}</span>
                 </p>
                 </div>
                 <div class="planet-info-div">
-                <h2>Nomenclature:</h2>
-                <p class"planet-history">
+                <h2 class="planet-history-title">Nomenclature:</h2>
+                <p class="planet-history">
                      <span>${history.synopsis}</span>
                 </p>
                 </div>
